@@ -1,0 +1,38 @@
+.form{
+    width: fit-content;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+h2.titulo{
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+    color: var(--text-03);
+}
+h2.titulo::after{
+    width: 100%;
+    height: 2px;
+    background-color: var(--text-03);
+    opacity: .5;
+    margin-top: 15px;
+    display: block;
+    content: '';
+}
+
+.btn_cadastrar{
+    margin-top: 20px;
+    padding: 15px ;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+@media screen and (max-width: 470px) {
+    .form{
+        width: 100%;
+        
+        & input{
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,40 @@
+.header{
+    background-color: #003459;
+    /* padding-left: 200px; */
+    width: calc(100% - 200px);
+    margin-left: 200px;
+    height: 50px;
+}
+
+.ul_info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+
+    & li{
+        height: 100%;
+        font-size: 1.2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 10px;
+        cursor: pointer;
+        color: #fff;
+
+
+        & p{
+            font-size: 1.2rem;
+        }
+
+        & svg{
+            height: 23px;
+            width: 23px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            fill: #333;
+            margin-top: 5px;
+        }
+    }
+}

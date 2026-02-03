@@ -1,0 +1,18 @@
+.input{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+
+
+    & label{
+        font-size: 1.2rem;
+        padding: 5px 0;
+        color: var(--text-03);
+    }
+
+    & input{
+        font-size: 1.1rem;
+        width: 400px;
+        padding: 5px 8px;
+    }
+}

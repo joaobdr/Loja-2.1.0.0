@@ -1,0 +1,43 @@
+.form_login{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.div_form{
+    width: fit-content;
+    min-height: 500px;
+    padding: 30px;
+    padding-left: 20px;
+}
+h1.titulo{
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-03);
+
+}
+
+.link_cadastro{
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 0;
+
+    & a{
+        font-size: 1.1rem;
+        color: var(--text-03);
+    }
+}
+
+.btn_submit{
+    width: 100%;
+    padding: 15px 0;
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+
+.mensagem_erro{
+    padding-top: 20px;
+    color: #f00;
+    font-size: 1.2rem;
+}

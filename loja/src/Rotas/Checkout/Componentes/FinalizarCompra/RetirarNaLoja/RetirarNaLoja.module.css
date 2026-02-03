@@ -1,0 +1,86 @@
+.div_pai{
+    flex: 1;
+    padding: 20px;
+    background-color: var(--background-05);
+    border-radius: 5px;
+}
+
+h3.titulo{
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+.info_loja{
+    width: 100%;
+    margin-top: 20px;
+    border: 1px solid black;
+    padding: 15px;
+}
+h5.titulo{
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-03);
+
+}
+.div_info{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    gap: 10px;
+    color: var(--text-03);
+
+}
+.info{
+    margin-top: 20px;
+    color: var(--text-03);
+
+    & a{
+        display: inline;
+        font-weight: bold;
+    }
+}
+
+/* Input radio */
+
+.radio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 1.3rem;
+    color: var(--text-03);
+
+}
+
+.radio input {
+    display: none;
+}
+
+.checkmark {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #030f2e;
+    border-radius: 50%;
+    position: relative;
+}
+
+.radio input:checked + .checkmark {
+    border-color: #0e8a9b;    
+}
+
+.radio input:checked + .checkmark::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-color: var(--background-03);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

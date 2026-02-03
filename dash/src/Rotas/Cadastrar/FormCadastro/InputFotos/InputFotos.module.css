@@ -1,0 +1,107 @@
+/********************************          Fotos dos produtos                ************************************/
+
+.fotos{
+    width: 100%;
+    height: 160px;
+    border: 1px solid #fff;
+    margin-top: 20px;
+    padding: 10px;
+    overflow-x: scroll;
+    display: flex;
+    align-items: center;
+}
+
+.fotos_produto{
+    width: fit-content;
+    height: 100%;
+    display: flex;
+    gap: 10px;
+} 
+/* .fotos_produto li{
+
+} */
+
+.add_foto{
+    width: 250px;
+    background-color: #FFF;
+    
+    & svg{
+      width: 75px;
+      height: 75px;
+    }
+  }
+  
+  .label{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    color: #333;
+
+    & input{
+      display: none;
+    }
+}
+
+.li{
+  width: 250px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  
+  & img{
+    width: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 3px;
+    border: 2px solid #003459;
+    cursor: pointer;
+  }
+  & div{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background-color: #00000099;
+    cursor: pointer;
+
+  }
+  & svg{
+    width: 75px;
+    height: 75px;
+  }
+}
+
+.li:hover div{
+  display: flex;
+}
+
+/* largura do scroll */
+.fotos::-webkit-scrollbar {
+  height: 8px;
+}
+
+/* fundo do scroll */
+.fotos::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* “thumb” (a barrinha que se move) */
+.fotos::-webkit-scrollbar-thumb {
+  background: #ffffff;
+  border-radius: 8px;
+}
+
+/* hover no thumb */
+.fotos::-webkit-scrollbar-thumb:hover {
+  background: #198eac;
+}
+
+

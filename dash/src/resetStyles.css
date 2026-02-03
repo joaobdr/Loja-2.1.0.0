@@ -1,0 +1,62 @@
+:root {
+    --text-01: #333;
+    --text-02: #fff
+
+}
+
+
+[data-tema="escuro"] {
+    --text-01: #fff;
+    --text-02: #333;
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 1rem;
+    font-weight: normal;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Signika', cursive;
+    font-family: cursive;
+}
+img{
+    max-width: 100%;
+}
+
+button, a{
+    display: block;
+}
+
+body{
+    background-color: var(--background-01);
+    background-color: #222;
+    overflow: hidden;
+}
+
+html{
+    scroll-behavior: smooth;
+} 
+
+.container{
+    width: 1300px;
+    margin: 0 auto;
+}
+.main{
+    color: #fff;
+    font-size: 3rem;
+    /* background-color: #415A77; */
+    margin-left: 200px;
+    width: calc(100% - 200px);
+    height: calc(100vh - 50px);
+    overflow: hidden;
+}
+
+@media screen and (max-width: 1350px) and (min-width: 900px) {
+}
+
+@media screen and (max-width: 900px) {
+}
+

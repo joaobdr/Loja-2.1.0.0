@@ -1,0 +1,135 @@
+.div_pai{
+    border-top: 1px solid black;
+    width: 90%;
+    margin: 0 auto;
+
+    & form {
+        padding-bottom: 30px;
+    }
+    
+}
+ .info_pessoal{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+}
+h5.titulo{
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.tipo_de_documento{
+    display: flex;
+    width: 100%;
+    gap: 15px;
+
+    & select{
+        flex: 1;
+    }
+
+    & input{
+        flex: 5;
+    }
+
+}
+.input_email{
+    margin-top: 10px;
+}
+
+.div_pai{
+    & input, select, .inputContainer {
+        padding: 5px;
+        height: 48px;
+        border: 1px solid #d1d5db;
+        border-radius: 3px;
+        background: #fff;
+        
+        transition: border-color 0.2s, box-shadow 0.2s;
+    }
+}
+.detalhes_cartao{
+    margin-top: 30px;
+}
+
+.titular_cartao{
+    width: 100%;
+}
+
+.numero_codigo_cartao{
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+
+    & .inputContainer:nth-child(1){
+        flex: 2;
+    }
+    & .inputContainer:nth-child(2){
+        flex: 1;
+    }
+}
+.mes_banco_parcelas{
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+
+    & .inputContainer{
+        flex: 1;
+    }
+
+    & select{
+        flex: 1;
+    }
+}
+
+
+h4.titulo{
+    font-size: 1.3rem;
+    text-align: center;
+    font-weight: 700;
+    padding: 10px 0;
+    width: 100%;
+    cursor: pointer;
+} 
+ 
+
+.progress{
+    display: none;
+}
+
+
+
+.loading{
+    width: 100%;
+    height: 100%;
+    background-color: #00000069;
+    z-index: 1000000;
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loading::after{
+    width: 25%;
+    aspect-ratio: 1 / 1;
+    display: block;
+    content: '';
+    border-radius: 50%;
+    border: 20px rgb(211, 7, 7) solid;
+    border-top: 20px solid rgb(1, 196, 131);
+    animation: load infinite linear 5s;
+
+}
+
+@keyframes load {
+    0%{
+        rotate: 0deg;
+    }    
+    100%{
+        rotate: 360deg;
+    }
+}

@@ -1,0 +1,36 @@
+.main{
+    padding-top: 80px;
+}
+.div_pai{
+    background-color: var(--background-08);
+    border-radius: 5px;
+    padding: 50px 0; 
+}
+
+h3.titulo{
+    font-size: 1.75rem;
+    font-weight: 700;
+    text-align: center;
+    color: var(--text-01);
+}
+
+h3.titulo::after{
+    width: 100px;
+    height: 3px;
+    display: block;
+    content: '';
+    margin: 0 auto;
+    background-color: var(--text-01);
+    border-radius: 10px;
+    margin-top: 8px;
+}
+
+.ul_lista_pedidos{
+    width: 80%;
+    min-height: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 20px;
+}

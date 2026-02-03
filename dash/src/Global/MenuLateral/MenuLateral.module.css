@@ -1,0 +1,36 @@
+.aside{
+    width: 200px;
+    height: 100vh;
+    background: #00171f;
+    min-height: 200px;
+    position: fixed;
+}
+
+.logo{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #fff;
+    font-size: 1.75rem;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.ul_menu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.ul_menu li a{
+    width: 175px;
+    background-color: #fff;
+    padding: 5px 0;
+    color: #333;
+    text-align: center;
+    font-size: 1.1rem;
+}

@@ -1,0 +1,30 @@
+.section{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    & div{
+        width: 35%;
+        aspect-ratio: 1 / 1;
+        border-radius: 50%;
+        border: 20px solid #2E4052;
+        border-top: 20px solid #93ACB5;
+        animation: load infinite linear 1s;
+    }
+}
+
+
+@keyframes load {
+    0%{
+        rotate: 0deg;
+    }    
+    100%{
+        rotate: 360deg;
+    }
+}

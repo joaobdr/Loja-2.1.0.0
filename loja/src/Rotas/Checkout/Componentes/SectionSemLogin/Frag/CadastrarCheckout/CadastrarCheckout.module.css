@@ -1,0 +1,42 @@
+.cadastrar{
+    flex: 1;
+    padding: 20px;
+}
+.div_cadastro{
+    display: flex;
+    flex-direction: column;
+}
+h2.titulo{
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    color: var(--text-03);
+    margin-bottom: 20px;
+}
+.p{
+    margin: 0 auto;
+    width: 70%;
+    color: var(--text-03);
+    text-align: center;
+}
+
+.btn_abrir_form{
+    margin: 0 auto;
+    width: 70%;
+    padding: 10px 50px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1350px) {
+    .cadastrar{
+        padding: 20px 0;
+        padding-left: 10px;
+    }
+}
+@media screen and (max-width: 470px) {
+    .cadastrar{
+        width: 100%;
+    }
+}
+

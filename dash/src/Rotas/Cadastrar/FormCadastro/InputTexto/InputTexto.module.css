@@ -1,0 +1,29 @@
+
+.inputCodigo{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+    & label{
+        font-size: 1.4rem;
+    }
+    & input{
+        width: 200px;
+        font-size: 1.1rem;
+        padding: 5px 10px;
+        border: none;
+        background-color: transparent;
+        border-bottom: 1px solid #fff;
+        color: #fff;
+        font-weight: 300;
+
+    }
+    & input:focus{
+        outline: none;
+        border: none;
+        border-bottom: 1px solid #fff;
+    }
+}
+.preco input{
+    width: 100px;
+}

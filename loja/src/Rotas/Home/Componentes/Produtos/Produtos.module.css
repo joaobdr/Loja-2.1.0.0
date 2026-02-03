@@ -1,0 +1,39 @@
+section.section{
+    height: fit-content;
+    background-color: var(--background-05);
+    margin-top: 50px;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+h2.titulo{
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: var(--text-01);
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    padding-right: 25px;
+
+    & a{
+        color: var(--text-01);
+        opacity: .8;
+        justify-content: center;
+        display: flex;
+        gap: 5px;
+        align-items: center;
+    }
+}
+
+.div_lista_de_produtos{
+    position: relative;
+    width: 100%;
+    padding: 10px;
+    overflow: auto;
+}
+.ul_lista_de_produtos{
+    width: fit-content;
+    display: flex;
+    margin-top: 15px;
+    gap: 15px;
+}

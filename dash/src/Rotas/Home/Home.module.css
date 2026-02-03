@@ -1,0 +1,12 @@
+.main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 3rem;
+    background-color: #415A77;
+    margin-left: 200px;
+    width: calc(100% - 200px);
+    height: calc(100vh - 50px);
+    overflow: hidden;
+}

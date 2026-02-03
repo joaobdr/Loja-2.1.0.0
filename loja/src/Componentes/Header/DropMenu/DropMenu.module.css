@@ -1,0 +1,36 @@
+.ul{
+    width: fit-content;
+    height: fit-content;
+    background-color: #f5f5f5;
+    position: absolute;
+    top: 35px;
+    right: 0;
+    border: 1px solid #000000;
+    border-top: none;
+    animation: 300ms forwards init;
+
+    & li{
+        width: 100%;
+    }
+    
+    & a {
+        padding: 15px 30px;
+        color: #111;
+        white-space: nowrap;  
+
+    }
+
+    & a:hover{
+        background-color: #ccc;
+    }
+    
+}
+
+
+
+@keyframes init {
+    0%{
+        top: -100px;
+        opacity: 0;
+    }
+}
