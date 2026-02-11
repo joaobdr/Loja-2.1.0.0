@@ -3,7 +3,7 @@ import style from './InputTexto.module.css'
 
 
 const InputTexto = ({valor, setValor, nome, tipo, preco, numero}) => {
-
+    
     const handle = {
         numeros: e =>  {
             const limpo = e.target.value.replace(/[^0-9.,]/g, '').replace(',', '');
@@ -26,12 +26,13 @@ const InputTexto = ({valor, setValor, nome, tipo, preco, numero}) => {
 
     return (
         <div className={`${style.inputCodigo} ${preco ? style.preco : ''}`}>
-            <label htmlFor={nome.toLowerCase().split(' ').join('-')}>{nome}:</label>
+            <label htmlFor={nome.split(' ').join('-').toLowerCase()}>{nome}:</label>
             <input 
-                id={nome.toLowerCase().split(' ').join('-')} 
+                id={nome.split(' ').join('-').toLowerCase()} 
                 type={tipo} 
                 value={valor} 
                 onChange={verificacao} 
+                required
                 />
         </div>
     )

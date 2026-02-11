@@ -7,12 +7,36 @@
     padding-top: 30px;
 }
 
-
+h3.titulo{
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    color: var(--text-Primary);
+}
+h3.titulo::after{
+    width: 100px;
+    height: 3px;
+    display: block;
+    content: '';
+    border-radius: 10px;
+    margin: 0 auto;
+    background-color: var(--text-02);
+    margin-top: 8px;
+    opacity: .5;
+}
 
 /********************************          Inputs simples                ************************************/
 .div_inputs{
-    display: flex;
-    justify-content: space-between;
+    border: 1px solid var(--text-Secondary);
+    padding: 15px;
+    color: var(--text-Primary);
+
+    & section{
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;        
+        gap: 50px;
+    }
 }
 
 
@@ -22,7 +46,7 @@
     align-items: center;
 
     & label{
-        font-size: 1.4rem;
+        font-size: 1.1rem;
     }
     & input{
         width: 200px;
@@ -30,8 +54,8 @@
         padding: 5px 10px;
         border: none;
         background-color: transparent;
-        border-bottom: 1px solid #fff;
-        color: #fff;
+        border-bottom: 1px solid var(--text-Secondary);
+        color: var(--text-Primary);
         font-weight: 300;
 
     }
@@ -43,6 +67,39 @@
 }
 .preco input{
     width: 100px;
+}
+
+/********************************          Inputs não obrigatorios                ************************************/
+
+
+/********************************          descrição do produto                ************************************/
+.descricao::before, 
+.descricao::after{
+    width: 100%;
+    height: 3px;
+    border-radius: 10px;
+    background-color: #a3a3a3;
+    content: '';
+    display: block;
+    margin: 20px 0;
+}
+.descricao{
+    width: 100%;
+
+    & h5{
+        font-size: 1.4rem;
+        text-align: center;
+    }
+
+    & textarea{
+        width: 100%;
+        max-width: 100%;
+        min-width: 100%;
+        padding: 10px;
+        min-height: 150px;
+        font-size: 1.1rem;
+        margin-top: 8px;
+    }
 }
 
 
@@ -88,7 +145,19 @@
 
 /********************************          botão do formulario                ************************************/
 
+.span_erro{
+    font-size: 1.5rem;
+    color: red;
+    text-align: center;
+    margin-top: 20px;
+}
+
 .btn{
     cursor: pointer;
     padding: 30px 0;
+    font-size: 1.5rem;
+    margin-top: 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    background-color: var(--accent);
 }

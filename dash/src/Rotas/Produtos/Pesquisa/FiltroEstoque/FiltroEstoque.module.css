@@ -1,0 +1,29 @@
+/* Filtro estoque */
+.estoque{
+    background-color: var(--background);
+    width: fit-content;
+    padding: 15px;
+    border-radius: 3px;
+}
+h5.titulo{
+    font-size: 1.1rem;
+    text-align: center;
+    color: var(--text-Primary);
+}
+h5.titulo::after{
+    width: 100%;
+    height: 2px;
+    display: block;
+    content: '';
+    background-color: var(--text-Secondary);
+    margin: 10px auto;
+    border-radius: 10px;
+}
+.div_estoque_input{
+    display: flex;
+    gap: 6px;
+
+    & label{
+        color: var(--text-Primary);
+    }
+}

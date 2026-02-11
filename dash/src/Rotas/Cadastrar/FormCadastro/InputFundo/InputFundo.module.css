@@ -2,7 +2,7 @@
 .img_fundo{
     width: 500px;
     height: 300px;
-    border: 1px solid #FFF;
+    border: 1px solid var(--text-Secondary);
     margin: 0 auto;
     cursor: pointer;
     padding: 5px;

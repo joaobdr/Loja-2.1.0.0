@@ -1,0 +1,96 @@
+.lateral{
+    width: 200px;
+    height: 100dvh;
+    background-color: var(--secondary);
+    background-color: var(--text-Secondary);
+    position: fixed;
+    top: 0;
+
+}
+
+h2.titulo{
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    color: var(--text-Primary);
+}
+/***********************        Menu lateral        ***********************/
+.menu{
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    width: 100%;
+}
+.menu a{
+    /* background-color: var(--text-Secondary); */
+    color: var(--text-Primary);
+    width: 170px;
+    padding: 8px 15px;
+    text-align: center;
+    border-radius: 3px;
+    font-size: 1.1rem;
+    transition: 200ms;
+}
+
+a.active{
+    background-color: var(--primary);
+}
+
+
+
+
+
+
+
+
+/***********************        Btns sair e modo        ***********************/
+
+.tema{
+    width: 100%;
+    justify-content: center;
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+}
+.tema button{
+    padding: 5px 30px;
+    cursor: pointer;
+    background-color: var(--cards);
+    background-color: var(--text-Secondary);
+    border: 1px solid var(--text-Primary);
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & svg{
+        width: 22px;
+        height: 22px;
+        fill: var(--text-Primary);
+    }
+}
+
+
+
+button.active{
+    background: var(--primary);
+}
+
+
+.btns{
+    width: 100%;
+    position: absolute;
+    bottom: 20px;
+    right: 0;
+}
+.sair{
+    width: fit-content;
+    font-size: 1.2rem;
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+    color: var(--text-Primary);
+}

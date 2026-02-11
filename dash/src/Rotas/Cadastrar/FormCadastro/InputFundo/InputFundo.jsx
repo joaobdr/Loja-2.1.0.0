@@ -11,9 +11,18 @@ const InputFundo = ({fundo, setFundo, link}) => {
 
     return (
         <div className={style.img_fundo} onMouseEnter={e => setFotoM(true)} onMouseLeave={e => setFotoM(false)}>
-            <label className={style.div_plus} style={{display: fotoM ? 'flex' : 'none'}}>
+            <label 
+                className={style.div_plus} 
+                style={{display: fotoM ? 'flex' : 'none'}}
+            >
                 <Plus/>
-                <input type="file" accept='image/*' onChange={e => setFundo(e.target.files[0])}/>
+
+                <input 
+                    type="file" 
+                    accept='image/*' 
+                    onChange={e => setFundo(e.target.files[0])} 
+                />
+
             </label>
             <img src={ typeof(fundo) === 'string' ? link + fundo : URL.createObjectURL(fundo)} alt="" />
         </div>

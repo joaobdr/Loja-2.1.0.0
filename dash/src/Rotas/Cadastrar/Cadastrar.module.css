@@ -2,11 +2,12 @@ h2.titulo{
     font-size: 2rem;
     font-weight: bold;
     text-align: center;
+    color: var(--text-Primary);
 }
 h2.titulo::after{
     width: 95%;
     height: 2px;
-    background-color: #fff;
+    background-color: var(--text-Primary);
     content: '';
     display: block;
     border-radius: 10px;
@@ -22,7 +23,7 @@ h2.titulo::after{
     width: 95%;
     max-width: 1200px;
     min-height: 500px;
-    background-color: #333;
+    background-color: var(--cards);
     margin: 0 auto;
     padding: 20px;
     margin-bottom: 50px;

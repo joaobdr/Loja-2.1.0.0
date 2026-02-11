@@ -17,14 +17,20 @@ app.use(cors())
 
 
 const testes = require('./rotas/testes');
+const cadastrar_produto = require('./rotas/dashboard/cadastrar');
+const token = require('./rotas/dashboard/token');
 const login = require('./rotas/dashboard/login');
+const lista_de_produtos = require('./rotas/dashboard/lista_de_produtos');
 
 
 // ***************************     ROTAS     ***************************
 
 
 app.use('/api', login)
+app.use('/api', cadastrar_produto)
 app.use('/api', testes)
+app.use('/api', token)
+app.use('/api', lista_de_produtos)
 app.get('/', (_, res) => res.status(200).json({msg: 'teste de rota'}))
 
 

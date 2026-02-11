@@ -1,5 +1,5 @@
 .header{
-    background-color: #003459;
+    background-color: var(--secondary);
     /* padding-left: 200px; */
     width: calc(100% - 200px);
     margin-left: 200px;
@@ -24,7 +24,15 @@
 
 
         & p{
-            font-size: 1.2rem;
+            width: 30px;
+            height: 30px;
+            border: 2px solid var(--text-Primary);
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            color: var(--text-Primary);
         }
 
         & svg{

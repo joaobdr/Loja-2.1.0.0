@@ -15,18 +15,11 @@ const secretKey = process.env.secretKey
 
 router.post('/login', async (req, res) =>{
     try {
-        const {username, senha, verifToken} = req.body
-
-        if(verifToken){
-            const respToken = await verificarToken(verifToken, username)
-            return res.status(200).json(respToken)
-        }
+        const {username, senha} = req.body
         
         if(!username || !senha) return res.status(400).json({msg: 'Usuário ou senha faltando!', status: false})
             
         const respUserMongo = await db.collection('usuarios-dashboard').findOne({username})
-        console.log(respUserMongo);
-        
         if(!respUserMongo) return res.status(404).json({msg: 'Usuário não encontrado!', status: false}) 
         if(respUserMongo.senha !== senha) return res.status(404).json({msg: 'Senha invalida', status: false})
 

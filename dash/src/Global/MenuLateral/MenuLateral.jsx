@@ -13,9 +13,6 @@ const MenuLateral = () => {
             <Link to='/' className={style.logo}>dashboard</Link>
 
             <ul className={style.ul_menu}>
-              <li><Link to="estoque">Estoque</Link></li>
-              <li><Link to="produtos">Produtos</Link></li>
-              <li><Link to="vendas">Vendas</Link></li>
               <li><Link to="cadastrar">Cadastrar</Link></li>
             </ul>
         </section>

@@ -19,28 +19,47 @@ const FormCadastro = () => {
     const [categoria, setCategoria] = React.useState('')
     const [estoque, setEstoque] = React.useState('')
     const [active, setActive] = React.useState(false) // se o produto vai ficar ativo ou não
-    const [fotoM, setFotoM] = React.useState(false) //indoca a animação de adicionar outro fundo na imagem de fundo
 
+    const [mensagem, setMensagem] = React.useState(null)
+    const {link, login, token} = React.useContext(useStorage)
 
-    const {link} = React.useContext(useStorage)
-
-    const ts = {
-        codigo: 1234,
-        nome: 'teste 123',
-        preco: 9.9,
-        custo: 7.79,
-        imagens: ['imagem-01.jpg', 'imagem-02.jpg'],
-        descricao: 'Descrição do produto',
-        categoria: 'categoria 01',
-        ativo: false,
-        estoque: 99,
-        destaque: false,
-        data_criacao: '15/03/2026'
-    }
     const handleSubmit = async e =>{
-        e.preventDefault()
-        console.log('enviar formualrio');
+        e.preventDefault()       
+
+        if(!imagens[0]) return setMensagem('Insira pelo menos uma imagem!!')
+            
+        const formData = new FormData()
+
+        console.log(login.username);
         
+        formData.append('codigo', codigo)
+        formData.append('username', login.username)
+        formData.append('nome', nome)
+        formData.append('preco', preco)
+        formData.append('custo', custo)
+        formData.append('categoria', categoria)
+        formData.append('descricao', descricao)
+        formData.append('estoque', estoque)
+        formData.append('fundo', fundo)
+        imagens.forEach(x => formData.append('imagens', x))
+
+        const options = {
+            method: 'POST',
+            headers: {token: `Bearer ${token}`},
+            body: formData
+        }
+
+        try {
+            const post = await fetch(link + "/api/cadastrar", options)
+            const resp = await post.json()
+
+            console.log(resp);
+            setMensagem(resp.msg);
+
+            
+        } catch (error) {
+            setMensagem('Erro ao salvar informações, por favor tente mais tarde!')
+        }        
     }
 
 
@@ -48,14 +67,35 @@ const FormCadastro = () => {
         <form className={style.form} onSubmit={handleSubmit}>
 
             <div className={style.div_inputs}>
-                <InputTexto valor={codigo} setValor={setCodigo} nome='codigo' tipo="text" numero={true} />
-                <InputTexto valor={nome} setValor={setNome} nome='Nome do produto' tipo="text" numero={false} preco={false}/>
-                <InputTexto valor={preco} setValor={setPreco} nome='Preço' tipo="text" preco={true}/>
-                <InputTexto valor={custo} setValor={setCusto} nome='Custo' tipo="text" preco={true}/>
+                <h3 className={style.titulo}>Campos obrigatorios</h3>
+
+                <section>
+                    <InputTexto valor={codigo} setValor={setCodigo} nome='codigo' tipo="text" numero={true} required={true} />
+                    <InputTexto valor={nome} setValor={setNome} nome='Nome produto' tipo="text" numero={false} preco={false} required={true}/>
+                    <InputTexto valor={categoria} setValor={setCategoria} nome='Categoria' tipo="text" required={true}/>
+                </section>
+            </div>
+
+            <div className={style.div_inputs}>
+                <h3 className={style.titulo}>Campos opcionais</h3>
+
+                <section>
+                    <InputTexto valor={preco} setValor={setPreco} nome='Preço' tipo="text" preco={true}/>
+                    <InputTexto valor={custo} setValor={setCusto} nome='Custo' tipo="text" preco={true}/>
+                    <InputTexto valor={estoque} setValor={setEstoque} nome='Estoque' tipo="text" preco={true}/>
+                </section>
+            </div>
+            <div className={style.descricao}>
+                <label>
+                    <h5>Descrição do produto</h5>
+                    <textarea placeholder='Insira aqui uma descrição para o produto' onChange={e => setDescricao(e.target.value)} value={descricao} required></textarea>
+                </label>
             </div>
 
             <InputFotos imagens={imagens} setImagens={setImagens}/>
             <InputFundo fundo={fundo} setFundo={setFundo} link={link}/>
+
+            {mensagem && <span className={style.span_erro}>{mensagem}</span>}
 
             <button className={style.btn}>Cadastrar produto</button>
         </form>

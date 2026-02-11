@@ -1,0 +1,79 @@
+.main{
+    width: 90%;
+    height: fit-content;
+    background-color: var(--cards);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+
+/**************************                INPUT PESQUISA                **************************/
+.pesquisa{
+    width: 100%;
+    display: flex;
+    gap: 15px;
+    
+}
+.valor_estoque{
+    width: 200px;
+    background-color: var(--success);
+    border-radius: 3px;
+    padding: 20px;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    & h5{
+        text-align: center;
+    }
+}
+
+.input{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    width: 100%;
+
+    & label{
+        font-size: 1.3rem;
+        color: var(--text-Primary);
+    }
+
+    & input{
+        font-size: 1.1rem;
+        padding: 5px 10px;
+        width: 100%;
+    }
+}
+
+
+/**************************                Filtros                *********************************/
+.filtros{
+    width: 100%;
+}
+h4.titulo{
+    font-size: 1.3rem;
+    color: var(--text-Primary);
+    text-align: center;
+}
+
+h4.titulo::before{
+    width: 100%;
+    height: 3px;
+    display: block;
+    margin: 15px auto;
+    content: '';
+    background-color: var(--text-Secondary);
+    border-radius: 10px;
+}
+.section{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+

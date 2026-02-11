@@ -6,6 +6,8 @@ import Home from './Rotas/Home/Home'
 import Header from './Global/Header/Header'
 import MenuLateral from './Global/MenuLateral/MenuLateral'
 import Cadastrar from './Rotas/Cadastrar/Cadastrar'
+import Lateral from './Global/Lateral/Lateral'
+import Produtos from './Rotas/Produtos/Produtos'
 
 const Rotas = () => {
     const {login} = React.useContext(useStorage)
@@ -15,8 +17,7 @@ const Rotas = () => {
         return (
             <Routes>
                 <Route path="/*" element={<Login />}/>
-            </Routes>
-                )
+            </Routes>)
 
     }
 
@@ -24,11 +25,13 @@ const Rotas = () => {
     return (
 
         <>
-            <MenuLateral />
+            {/* <MenuLateral /> */}
             <Header />
+            <Lateral />
             <main className='main'>
                 <Routes>
                     <Route path="/cadastrar" element={<Cadastrar />}/>
+                    <Route path="/produtos" element={<Produtos />}/>
                     <Route path="/*" element={<Home />}/>
                 </Routes>
             </main>

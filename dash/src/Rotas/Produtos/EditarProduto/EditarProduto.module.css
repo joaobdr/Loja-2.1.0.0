@@ -1,0 +1,140 @@
+.section{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    background-color: var(--background-02);
+    top: 0;
+    left: 0;
+}
+
+.content{
+    width: 90%;
+    background-color: var(--cards);
+    position: relative;
+    padding: 50px;
+    border-radius: 5px;
+    border: 1px solid var(--text-Secondary);
+    max-height: 80%;
+    overflow-y: auto;
+}
+.button_close{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 10px;
+
+    & svg{
+        width: 20px;
+        height: 20px;
+        fill: var(--text-Secondary);
+    }
+}
+
+
+
+/***************************                   CODIGO                   ***************************/
+.codigo{
+    width: 100%;
+}
+.info{
+    width: fit-content;
+    display: flex;
+    gap: 10px;
+    margin: 0 auto;
+    
+    & h5, span{
+        font-size: 1.2rem;
+        color: var(--text-Primary);
+    }
+}
+
+.codigo::after{
+    width: 100%;
+    height: 2px;
+    display: block;
+    content: '';
+    background-color: var(--text-Secondary);
+    border-radius: 10px;
+    margin: 15px 0;
+}
+
+/***************************                   Inputs para alterar                   ***************************/
+.div_input{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.inputs{
+    width: 100%;
+    padding: 15px 0;
+    border: 1px solid var(--text-Secondary);
+    border-radius: 3px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.descricao{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    min-height: fit-content;
+
+    & label{
+        font-size: 1.2rem;
+    }
+    & textarea{
+        max-width: 100%;
+        width: 100%;
+        min-width: 100%;
+        min-height: 100px;
+        font-size: 1.1rem;
+        padding: 5px 10px;
+    }
+}
+
+
+
+.imagem_fundo{
+    width: 500px;
+    height: 250px;
+    border: 1px solid var(--text-Secondary);
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 5px;
+
+    & img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        cursor: pointer;
+    }
+}
+/***************************                   Botão salvar                   ***************************/
+.botoes{
+    display: flex;
+    gap: 20px;
+    width: fit-content;
+    margin: 0 auto;
+    margin-top: 20px;
+
+
+    & button{
+        padding: 10px 50px;
+        cursor: pointer;
+        background-color: var(--success);
+        border-radius: 3px;
+        border: 1px solid var(--text-Secondary);
+        color: var(--text-Primary);
+    }
+    & button:nth-child(1){
+        background-color: var(--error);
+    }
+}

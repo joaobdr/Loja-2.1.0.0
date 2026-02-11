@@ -1,9 +1,8 @@
 /********************************          Fotos dos produtos                ************************************/
-
 .fotos{
     width: 100%;
     height: 160px;
-    border: 1px solid #fff;
+    border: 1px solid var(--text-Secondary);
     margin-top: 20px;
     padding: 10px;
     overflow-x: scroll;
@@ -17,13 +16,8 @@
     display: flex;
     gap: 10px;
 } 
-/* .fotos_produto li{
-
-} */
-
 .add_foto{
     width: 250px;
-    background-color: #FFF;
     
     & svg{
       width: 75px;
@@ -39,6 +33,8 @@
     width: 100%;
     height: 100%;
     color: #333;
+    background-color: var(--text-Secondary);
+    border-radius: 3px;
 
     & input{
       display: none;

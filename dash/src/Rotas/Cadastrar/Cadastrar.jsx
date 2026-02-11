@@ -1,16 +1,13 @@
 import React from 'react'
 import style from './Cadastrar.module.css'
-import Input from '../../Global/Input/Input'
 import FormCadastro from './FormCadastro/FormCadastro'
+import { useStorage } from '../../Global/Storage'
 
 const Cadastrar = () => {
-    const [codigo, setCodigo] = React.useState('')
-    const [nome, setNome] = React.useState('')
-    const [preco, setPreco] = React.useState('')
-    const [custo, setCusto] = React.useState('')
-
-
+    const {maisAcessados, setMaisAcessados, setPagina} = React.useContext(useStorage)
+    
     React.useEffect(()=>{
+        setPagina('cadastrar')      
         document.title = 'Cadastrar produtos'
     },[])
 

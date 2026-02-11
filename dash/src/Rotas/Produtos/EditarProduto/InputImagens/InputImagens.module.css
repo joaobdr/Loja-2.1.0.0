@@ -1,0 +1,72 @@
+.imgs{
+    width: 100%;
+    height: 170px;
+    border: 1px solid var(--text-Secondary);
+    padding: 10px;
+    border-radius: 3px;
+    overflow-x: auto;
+    display: flex;
+    gap: 10px;
+}
+
+
+.imgs figure{
+    position: relative;
+    width: 250px;
+    height: 130px;
+
+
+    & img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        cursor: pointer;
+        border-radius: 3px;
+    }
+
+    & .svg{
+        width: 100%;
+        height: 100%;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        background-color: #11111199;
+        border-radius: 3px;
+        position: absolute;
+    }
+    & svg{
+        width: 100px;
+        height: 100px;
+
+    }
+}
+.imgs figure:hover .svg{
+    display: flex;
+}
+.div{
+    width: fit-content;
+    display: flex;
+    gap: 15px;
+}
+
+.btn_remover_img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: 130px;
+    cursor: pointer;
+    background-color: var(--text-Secondary);
+    border-radius: 3px;
+
+    & input{
+        display: none;
+    }
+    & svg{
+        width: 250px;
+        height: 100px;
+        fill: var(--text-Primary);
+    }
+}
+

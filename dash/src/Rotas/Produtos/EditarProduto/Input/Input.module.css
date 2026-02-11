@@ -1,0 +1,15 @@
+.input{
+    width: fit-content;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+    & label{
+        font-size: 1.1rem;      
+        color: var(--text-Primary);  
+    }
+
+    & input{
+        padding: 5px 10px;
+    }
+}

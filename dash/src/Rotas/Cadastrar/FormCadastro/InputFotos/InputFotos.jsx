@@ -32,8 +32,15 @@ const InputFotos = ({imagens, setImagens}) => {
 
                 <li className={style.add_foto}>
                     <label className={style.label}>
+                        
                         <Plus />
-                        <input type="file" accept='image/*' multiple onChange={handleChange}/>
+
+                        <input 
+                            type="file" 
+                            accept='image/*' 
+                            multiple 
+                            onChange={handleChange} 
+                        />
                     </label>
                 </li>
             </ul>
