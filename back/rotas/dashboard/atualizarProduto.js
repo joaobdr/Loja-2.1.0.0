@@ -22,7 +22,7 @@ const fileFilter = (req, file, cb) => {
 
 const storage = multer.diskStorage({
     destination: function(req, file, cb){
-        cb(null, 'assets/imgs/produtos')
+        cb(null, 'assets/testes/')
     },
     filename: function (req, file, cb){
         
@@ -42,10 +42,10 @@ const removerArquvios = async (imagens, fundo) =>{
 }
 
 // ***************************     ROTA     ***************************
-router.post('/produto/cadastrar', (req, res, next) => {
+router.post('/produto/atualizar', (req, res, next) => {
 
 // ***************************     Verificações com multer     ***************************
-    upload.fields([{name: 'imagens', maxCount: 10}, {name: 'fundo', maxCount: 1}])(req, res, err => {
+    upload.fields([{name: 'imagens', maxCount: 10}, {name: 'imagemFundo', maxCount: 1}])(req, res, err => {
         if(err instanceof multer.MulterError) return res.status(400).json({ msg: err.message, status: false })
         if(err) return res.status(400).json({ msg: err.message, status: false })
         next()
@@ -54,57 +54,48 @@ router.post('/produto/cadastrar', (req, res, next) => {
 // ***************************     tratamento do request     ***************************
 async (req, res) =>{
     try {
-        const { username, codigo, nome, preco, custo, descricao, estoque, categoria} = req.body
+        const { username, codigo, nome, preco, custo, descricao, estoque, categoria, imgsAlteradas} = req.body
+        const imgs = JSON.parse(imgsAlteradas) || []
         const imagens = req.files?.imagens || []
-        const fundo = req.files.fundo ? req.files.fundo[0] : null;
+        const fundo = req.files.imagemFundo ? req.files.imagemFundo[0] : null;
         const token = req.headers.token?.split(' ')[1]
 
 
         const verifToken = await verificarToken(token, username)
-
-        
-        
         if(!verifToken.status) {
-            await removerArquvios(imagens, fundo)
+            removerArquvios(imagens, fundo)
             return res.status(401).json({verifToken})
         }
-
         const cargos = ['root', 'admin', 'adm']
-
+        
         if(!cargos.includes(verifToken.info_user.cargo)){
             await removerArquvios(imagens, fundo)
             return res.status(400).json({msg: 'Usuário sem permissão para cadastrar produto!', status: false})
         }
 
-        if(!codigo || !nome || !descricao || !imagens[0] || !categoria) {
-            await removerArquvios(imagens, fundo)
-            return res.status(400).json({msg: 'não há informações suficientes para proseguir com o cadastro', status: false})
-        }        
-        
-        const produto = {
-            codigo,
-            nome,
-            preco: Number(preco) || 0,
-            custo: Number(custo) || 0,
-            imagens: imagens.map(x => '/' + x.destination + '/' + x.filename),
-            imagem_fundo: fundo ? '/' + fundo.destination + '/' + fundo.filename : '/assets/imgs/default_fundo.jpg' ,
-            descricao,
-            categoria: categoria.toLowerCase(),
-            ativo: false,
-            estoque: Math.round(Number(estoque)) || 0,
-            destaque: false,
-            data_criacao: new Date()
+        let imagem_fundo = undefined;
+        if(fundo){
+            imagem_fundo = '/' + fundo.destination + fundo.filename
         }
-        const verificarProdutoMongo = await db.collection('produtos').findOne({codigo})
-
-        if(!!verificarProdutoMongo){
-            removerArquvios(imagens, fundo)
-            return res.status(409).json({msg: 'Produto já cadastrado!', status: false})
-        }
-
-        const insertMongo = await db.collection('produtos').insertOne(produto)
         
-        return res.status(201).json({msg: 'Produto cadastrado com sucesso!!', status: true, produto})
+
+        //cria uma array com o cominho das imagens
+        const imgsRecebidas = imagens.map(x => '/' + x.destination +  x.filename);
+        const tes = [...imgsRecebidas, ...imgs];
+
+        //Define undefined caso não venha nenhum numero do front
+        const est = estoque !== undefined ? Number(estoque) : undefined;
+        const pre = preco !== undefined ? Number(preco) : undefined;
+        const cus = custo !== undefined ? Number(custo) : undefined;
+        const teste = { nome, preco: pre, custo: cus, descricao, estoque:  est, categoria, imagens: tes, imagem_fundo} 
+
+        //Remove do objeto todos os itens q nao foram alterados
+        const novo = Object.fromEntries( Object.entries(teste).filter(([_, v]) => v !== undefined));
+
+        const atualizarMongo = await db.collection('produtos').updateOne({ codigo },{ $set: novo })
+        const lista = await db.collection('produtos').find({}).toArray()
+
+        return res.status(200).json({msg: 'Produto atualizado com sucesso!!', status: true, lista})
     } catch (err) {
         console.log('erro ===', err);        
         return res.status(500).json({msg: 'Erro interno do servidor', status: false})

@@ -3,12 +3,19 @@ import style from './Login.module.css'
 import Input from '../../Global/Input/Input'
 import { useStorage } from '../../Global/Storage'
 
+
+import Sun from '/assets/imgs/sun.svg?react'
+import Moon from '/assets/imgs/moon.svg?react'
+
 const Login = ({}) => {
     const [username, setUsername] = React.useState('')
     const [senha, setSenha] = React.useState('')
     const [error, setError] = React.useState('')
     const [btnActive, setBtnActive] = React.useState(false)
-    const {link, setToken, setLogin} = React.useContext(useStorage)
+    const {link, setToken, setLogin, tema, setTema} = React.useContext(useStorage)
+
+    console.log(tema);
+    
 
     React.useEffect(()=> {document.title = 'Login'} , [])
 
@@ -52,6 +59,9 @@ const Login = ({}) => {
 
   return (
     <main className={style.main}>
+        <div className={style.div_tema}>
+            {tema ? <Sun onClick={() => setTema(false)}/> : <Moon onClick={() => setTema(true)}/>}
+        </div>
         <section className={style.section}>
             <form className={style.form} onSubmit={handleSubmit}>
                 <h1 className={style.titulo}>Login</h1>

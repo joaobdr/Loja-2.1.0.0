@@ -159,5 +159,7 @@ h3.titulo::after{
     margin-top: 20px;
     border-radius: 5px;
     font-weight: bold;
-    background-color: var(--accent);
+    background-color: var(--text);
+    color: var(--active);
+    border: 2px solid var(--border);
 }

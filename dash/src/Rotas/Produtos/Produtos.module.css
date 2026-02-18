@@ -9,25 +9,18 @@
     padding-top: 100px;
     position: relative;
 }
-
-.content{
-    width: 90%;
-    background-color: var(--cards);
-    height: fit-content;
-
-}
-/********************              BARRA DE PESQUISA              *********************/
-
-
-
-
 /********************              TABELA DE PRODUTOS              *********************/
 .content{
+    width: 90%;
+    background-color: var(--surface);
+    height: fit-content;
     color: var(--text-Primary);
     padding: 20px;
     display: flex;
     justify-content: center;
     align-items: flex-start;
+    overflow-y: auto;
+    margin-bottom: 50px;
 
     & table {
         border-collapse: collapse;
@@ -39,6 +32,9 @@
         border: 2px solid var(--text-Primary);
         padding: 5px 8px;
         text-align: center;
+    }
+    & tbody tr:nth-child(2n+1){
+        background: var(--border-strong);
     }
 
     & th:nth-child(1){

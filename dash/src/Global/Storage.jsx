@@ -6,16 +6,19 @@ export const useStorage = React.createContext()
 export const Storage = ({children}) => {
     const tm = localStorage.tema ? JSON.parse(localStorage.tema).tema : false;
     const ls = localStorage['mais-acessados'] ? JSON.parse(localStorage['mais-acessados']) : [];
-
+    
+    
     const link = 'http://localhost:3000'
+    const cargos = ['addm', 'admin', 'root']
     const [login, setLogin] = React.useState(null)
     const [token, setToken] = React.useState(null)
     const [tema, setTema] = React.useState(tm)
     const [loading, setLoading] = React.useState(true)
     const [maisAcessados, setMaisAcessados] = React.useState(ls)
     const [pagina, setPagina] = React.useState(null)
-
     
+    
+    const formatado = valor =>{return valor.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}
     const verificarToken = async e =>{
         setLoading(true)
         const username = window.localStorage.usuario ? JSON.parse(window.localStorage.usuario).username : null
@@ -74,7 +77,7 @@ export const Storage = ({children}) => {
     React.useEffect(()=>{verificarToken()},[])
 
   return (
-    <useStorage.Provider value={{login, setLogin, link, token, setToken, setMaisAcessados, setTema, tema, maisAcessados, setPagina, pagina}}>
+    <useStorage.Provider value={{login, setLogin, link, token, setToken, setMaisAcessados, setTema, tema, maisAcessados, setPagina, pagina, cargos, formatado}}>
         {loading ? <Load width="100%" height="100vh"/> : children}
     </useStorage.Provider>
   )

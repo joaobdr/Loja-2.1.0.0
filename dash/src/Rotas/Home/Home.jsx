@@ -14,10 +14,6 @@ const Home = ({}) => {
 
 
     const ordenar = maisAcessados.sort((x, y) => y.acess - x.acess)
-    console.log(ordenar);
-
-
-
     // const ts = Object.keys(maisAcessados) // Keys dos objetos
 
 

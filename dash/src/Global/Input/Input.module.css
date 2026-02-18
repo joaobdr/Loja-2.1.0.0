@@ -6,7 +6,7 @@
 
     & label{
         font-size: 1.1rem;
-        color: var(--text-02);
+        color: var(--text);
     }
     & input{
         font-size: 1.1rem;

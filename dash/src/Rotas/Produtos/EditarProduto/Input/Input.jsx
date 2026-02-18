@@ -1,7 +1,7 @@
 import React from 'react'
 import style from './Input.module.css'
 
-const Input = ({nome, valor, setValor, tipo, numero, preco}) => {
+const Input = ({nome, valor, setValor, tipo, numero, preco, color}) => {
 
     const handle = e =>{
         if(numero) {
@@ -21,7 +21,7 @@ const Input = ({nome, valor, setValor, tipo, numero, preco}) => {
     return (
         <div className={style.input}>
             <label htmlFor={nome.toLowerCase().split(' ').join('-')}>{nome}</label>
-            <input id={nome.toLowerCase().split(' ').join('-')} type={tipo} value={valor} onChange={handle} />
+            <input style={color ? {borderBottomColor: color} : {}} id={nome.toLowerCase().split(' ').join('-')} type={tipo} value={valor} onChange={handle} />
         </div>
     )
 }

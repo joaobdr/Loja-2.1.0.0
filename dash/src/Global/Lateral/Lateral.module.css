@@ -2,7 +2,7 @@
     width: 200px;
     height: 100dvh;
     background-color: var(--secondary);
-    background-color: var(--text-Secondary);
+    background-color: var(--hover);
     position: fixed;
     top: 0;
 
@@ -36,7 +36,7 @@ h2.titulo{
 }
 
 a.active{
-    background-color: var(--primary);
+    background-color: var(--active);
 }
 
 

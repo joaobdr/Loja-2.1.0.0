@@ -31,12 +31,13 @@ const Produtos = ({}) => {
 
     React.useEffect(()=> {
         setPagina('produtos')
+        document.title = 'Lista de produtos'
         puxarProdutos()
     },[])
 
     return (
         <div className={style.main}>
-            {janela && <EditarProduto setJanela={setJanela} produto={janela}/>}
+            {janela && <EditarProduto setJanela={setJanela} produto={janela} setProdutos={setProdutos}/>}
             
             <Pesquisa setFiltros={setFiltros} filtros={filtros} setSearch={setSearch} search={search} produtos={produtos} />
             <div className={style.content}>
@@ -50,7 +51,7 @@ const Produtos = ({}) => {
                             <th>Estoque</th>
                             { cargos.includes(login.cargo) ? <th>Custo</th> : null}
                             <th>Preço</th>
-                            <th>Ações</th>
+                            { cargos.includes(login.cargo) ? <th>Ações</th> : null}
                         </tr>
                     </thead>
 

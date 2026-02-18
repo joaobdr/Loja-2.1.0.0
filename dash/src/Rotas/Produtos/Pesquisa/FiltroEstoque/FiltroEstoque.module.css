@@ -1,9 +1,10 @@
 /* Filtro estoque */
 .estoque{
-    background-color: var(--background);
     width: fit-content;
     padding: 15px;
     border-radius: 3px;
+    background-color: var(--bg);
+    border: 1px solid var(--border);
 }
 h5.titulo{
     font-size: 1.1rem;

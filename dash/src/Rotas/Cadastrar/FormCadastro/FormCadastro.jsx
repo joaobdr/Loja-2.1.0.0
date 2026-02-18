@@ -48,9 +48,9 @@ const FormCadastro = () => {
             headers: {token: `Bearer ${token}`},
             body: formData
         }
-
+        
         try {
-            const post = await fetch(link + "/api/cadastrar", options)
+            const post = await fetch(link + "/api/produto/cadastrar", options)
             const resp = await post.json()
 
             console.log(resp);
@@ -62,6 +62,7 @@ const FormCadastro = () => {
         }        
     }
 
+    
 
     return (
         <form className={style.form} onSubmit={handleSubmit}>

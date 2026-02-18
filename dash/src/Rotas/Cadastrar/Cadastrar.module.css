@@ -23,7 +23,7 @@ h2.titulo::after{
     width: 95%;
     max-width: 1200px;
     min-height: 500px;
-    background-color: var(--cards);
+    background-color: var(--surface);
     margin: 0 auto;
     padding: 20px;
     margin-bottom: 50px;

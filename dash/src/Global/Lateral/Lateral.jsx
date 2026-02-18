@@ -7,7 +7,7 @@ import Sun from '/assets/imgs/sun.svg?react'
 import Moon from '/assets/imgs/moon.svg?react'
 
 const Lateral = ({}) => {
-    const {setTema, tema, setMaisAcessados} = React.useContext(useStorage)
+    const {setTema, tema, setMaisAcessados, login, cargos} = React.useContext(useStorage)
     const location = useLocation()
 
     return (
@@ -17,8 +17,9 @@ const Lateral = ({}) => {
             </Link>
 
             <ul className={style.menu}>
-                <li><Link className={location.pathname === '/cadastrar' ? style.active : ''} data-link="cadastrar" to='/cadastrar'>Cadastrar</Link></li>
-                <li><Link className={location.pathname === '/produtos' ? style.active : ''} data-link="produtos" to='/produtos'>Produtos</Link></li>
+                {cargos.includes(login.cargo) && <li><Link className={location.pathname === '/cadastrar' ? style.active : ''} to='/cadastrar'>Cadastrar</Link></li>}
+                <li><Link className={location.pathname === '/produtos' ? style.active : ''} to='/produtos'>Produtos</Link></li>
+                <li><Link className={location.pathname === '/destaques' ? style.active : ''} to='/destaques'>Destaques</Link></li>
             </ul>
 
 

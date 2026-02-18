@@ -5,20 +5,19 @@
     align-items: center;
     justify-content: center;
     position: absolute;
-    background-color: var(--background-02);
+    background-color: var(--bg);
     top: 0;
     left: 0;
 }
 
 .content{
     width: 90%;
-    background-color: var(--cards);
+    background-color: var(--surface);
     position: relative;
     padding: 50px;
     border-radius: 5px;
-    border: 1px solid var(--text-Secondary);
-    max-height: 80%;
-    overflow-y: auto;
+    border: 1px solid var(--border-strong);
+    height: 80%;
 }
 .button_close{
     background-color: transparent;
@@ -32,10 +31,14 @@
     & svg{
         width: 20px;
         height: 20px;
-        fill: var(--text-Secondary);
+        fill: var(--text);
     }
 }
 
+.content_div{
+    overflow-y: auto;
+    height: calc(100% - 50px);
+}
 
 
 /***************************                   CODIGO                   ***************************/
@@ -50,7 +53,7 @@
     
     & h5, span{
         font-size: 1.2rem;
-        color: var(--text-Primary);
+        color: var(--text);
     }
 }
 
@@ -59,7 +62,7 @@
     height: 2px;
     display: block;
     content: '';
-    background-color: var(--text-Secondary);
+    background-color: var(--text-secondary);
     border-radius: 10px;
     margin: 15px 0;
 }
@@ -73,11 +76,23 @@
 .inputs{
     width: 100%;
     padding: 15px 0;
-    border: 1px solid var(--text-Secondary);
+    border: 2px solid var(--text-secondary);
     border-radius: 3px;
     display: flex;
     gap: 20px;
     justify-content: center;
+
+    & input{
+        color: var(--text);
+        border: none;
+        border-bottom: 2px solid var(--text-secondary);
+        background-color: transparent;
+    }
+    & input:focus{
+        outline: none;
+        border: none;
+        border-bottom: 2px solid #ffee00;
+    }
 }
 
 .descricao{
@@ -100,12 +115,11 @@
     }
 }
 
-
-
 .imagem_fundo{
+    position: relative;
     width: 500px;
     height: 250px;
-    border: 1px solid var(--text-Secondary);
+    border: 1px solid var(--text);
     margin: 0 auto;
     padding: 10px;
     border-radius: 5px;
@@ -117,6 +131,30 @@
         cursor: pointer;
     }
 }
+.replace_button{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    display: none;
+
+    & input{
+        display: none;
+    }
+
+    & svg{
+        width: 100px;
+        height: 100px;
+        fill: #f5f5f5;
+    }
+}
+.imagem_fundo:hover .replace_button{
+    display: flex;
+}
+
 /***************************                   Botão salvar                   ***************************/
 .botoes{
     display: flex;
@@ -125,16 +163,15 @@
     margin: 0 auto;
     margin-top: 20px;
 
-
     & button{
         padding: 10px 50px;
         cursor: pointer;
-        background-color: var(--success);
+        background-color: var(--text-disabled);
         border-radius: 3px;
-        border: 1px solid var(--text-Secondary);
+        border: 1px solid var(--border-strong);
         color: var(--text-Primary);
     }
     & button:nth-child(1){
-        background-color: var(--error);
+        background-color: var(--active);
     }
 }

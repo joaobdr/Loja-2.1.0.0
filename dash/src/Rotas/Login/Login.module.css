@@ -4,13 +4,31 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
+.div_tema{
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 15px;
+    transition: 1s;
+    
+    & svg{
+        cursor: pointer;
+        width: 25px;
+        height: 25px;
+        fill: var(--text);
+    }
+
+}
 
 h1.titulo{
     font-size: 2rem;
     font-weight: 700;
-    color: var(--text-02);
+    color: var(--text);
     text-align: center;
 
 }
@@ -19,17 +37,20 @@ h1.titulo::after{
     display: block;
     width: 100%;
     height: 3px;
-    background-color: var(--text-02);
+    background-color: var(--text);
     margin-top: 5px;
-    border-radius: 5px;
-    
+    border-radius: 5px;   
 }
 
 .form{
-    background-color: #555;
+    background-color: var(--border-strong);
     padding: 40px;
     border-radius: 5px;
     width: 360px;
+
+    & label{
+        color: var(--text);
+    }
 }
 
 .div_input{

@@ -20,7 +20,7 @@
 .content{
     width: 80%;
     min-height: 500px;
-    background-color: var(--primary);
+    background-color: var(--surface);
     border-radius: 5px;
 }
 
@@ -46,7 +46,7 @@
     }
     & a{
         width: 100%;
-        background-color: var(--cards);
+        background-color: var(--border-strong);
         color: var(--text-Primary);
         padding: 20px 0;
         display: flex;

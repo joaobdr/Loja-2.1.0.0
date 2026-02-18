@@ -37,10 +37,7 @@ const Produto = ({produto, filtros, search,setJanela}) => {
         if((produto.estoque > 0)) return null;           
     }
     if(filtros.categoria !== 'all') if(!(filtros.categoria === produto.categoria)) return null
-    if(!(produto.codigo.toLowerCase().includes(search.toLowerCase()) || produto.nome.toLowerCase().includes(search.toLowerCase())))return null
-
-    
-    
+    if(!(produto.codigo.toLowerCase().includes(search.toLowerCase()) || produto.nome.toLowerCase().includes(search.toLowerCase())))return null    
     
     return (
         <>
@@ -50,7 +47,7 @@ const Produto = ({produto, filtros, search,setJanela}) => {
                 <td>{produto.categoria}</td>
                 <td>{produto.estoque}</td>
                 {cargos.includes(login.cargo) ? <td>{formatarPreco(produto.custo)}</td> : null}
-                <td>{formatarPreco(produto.preco)}</td>
+                <td>{produto.preco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</td>
                 {cargos.includes(login.cargo) ? <td><Edit onClick={e => setJanela(produto)}/></td> : null}
             </tr>
         </>
