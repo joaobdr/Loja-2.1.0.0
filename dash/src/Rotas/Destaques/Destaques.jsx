@@ -27,8 +27,6 @@ const Destaques = ({}) => {
             setProdutos(resp.produtos)
         }
     }
-
-    console.log(produtosEmDestaques);
     
     React.useEffect(()=>{
         setPagina('destaques')
@@ -44,7 +42,7 @@ const Destaques = ({}) => {
                 <div className={style.itens_em_destaque}>
                     <ul className={style.ul_destaque}>
                         {produtosEmDestaques.map((x, y) => <ItensDestaques key={y} item={x}/>)}
-                        <li className={style.li_add}></li>
+                        {/* <li className={style.li_add}></li> */}
                     </ul>
                 </div>
             </div>

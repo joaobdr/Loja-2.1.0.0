@@ -1,0 +1,12 @@
+/* .li{
+    display: flex;
+
+
+    & p{
+        flex: 1;
+        border: 1px solid var(--text-secondary);
+        padding: 5px 10px;
+        font-size: 1.2rem;
+
+    }
+} */

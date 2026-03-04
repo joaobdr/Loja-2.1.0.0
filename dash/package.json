@@ -10,10 +10,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
     "@mercadopago/sdk-js": "^0.0.3",
+    "@mui/material": "^7.3.8",
+    "@mui/x-date-pickers": "^8.27.2",
     "@stripe/react-stripe-js": "^5.4.1",
     "@stripe/stripe-js": "^8.6.0",
+    "dayjs": "^1.11.19",
     "react": "^19.1.1",
+    "react-datepicker": "^9.1.0",
     "react-dom": "^19.1.1",
     "react-router-dom": "^7.9.5"
   },

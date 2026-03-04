@@ -1,0 +1,46 @@
+.section{
+    width: 100%;
+    min-height: 100px;
+    background-color: var(--surface);
+    padding: 20px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    flex: 3;
+    border: 2px solid var(--text-disabled);
+    
+}
+
+.input{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+
+    & label{
+        font-size: 1.3rem;
+        color: var(--text);
+    }
+
+    & input{
+        width: 500px;
+        font-size: 1.1rem;
+        padding: 5px 10px;
+        background-color: transparent;
+        border: none;
+        border-bottom: 2px solid var(--text-disabled);
+        caret-color: var(--text);
+        color: var(--text);
+    }
+    & input:focus{
+        outline: none;
+    }
+}
+
+.active{
+    display: flex;
+    gap: 8px;
+    color: var(--text);
+}

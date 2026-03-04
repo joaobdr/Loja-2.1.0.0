@@ -7,8 +7,9 @@ import Sun from '/assets/imgs/sun.svg?react'
 import Moon from '/assets/imgs/moon.svg?react'
 
 const Lateral = ({}) => {
-    const {setTema, tema, setMaisAcessados, login, cargos} = React.useContext(useStorage)
+    const {setTema, tema, maisAcessados, login, cargos} = React.useContext(useStorage)
     const location = useLocation()
+    const ordenar = maisAcessados.sort((x, y) => y.acess - x.acess)    
 
     return (
         <div className={style.lateral}>
@@ -16,10 +17,15 @@ const Lateral = ({}) => {
                 <h2 className={style.titulo}>Loja</h2>
             </Link>
 
-            <ul className={style.menu}>
+            {/* <ul className={style.menu}>
                 {cargos.includes(login.cargo) && <li><Link className={location.pathname === '/cadastrar' ? style.active : ''} to='/cadastrar'>Cadastrar</Link></li>}
                 <li><Link className={location.pathname === '/produtos' ? style.active : ''} to='/produtos'>Produtos</Link></li>
                 <li><Link className={location.pathname === '/destaques' ? style.active : ''} to='/destaques'>Destaques</Link></li>
+                <li><Link className={location.pathname === '/promocoes' ? style.active : ''} to='/promocoes'>Promoções</Link></li>
+            </ul> */}
+
+            <ul className={style.menu}>
+                {ordenar.map((x, y) => <li key={y}><Link className={location.pathname === `/${x.link}` ? style.active : ''} to={`/${x.link}`}>{x.link}</Link></li>)}
             </ul>
 
 

@@ -1,0 +1,94 @@
+.main{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+}
+
+.pesquisa_e_create{
+    width: 100%;
+    display: flex;
+    gap: 20px;
+}
+/* section de cupons */
+.cupons_ativos{
+    width: 100%;
+    min-height: 100px;
+    padding: 20px;
+    background-color: var(--surface);
+    border-radius: 5px;
+
+}
+
+h2.titulo{
+    font-size: 1.5rem;
+    text-align: center;
+    color: var(--text);
+
+}
+h2.titulo::after{
+    width: 100px;
+    height: 3px;
+    background-color: var(--text-secondary);
+    display: block;
+    content: '';
+    border-radius: 100px;
+    margin: 10px auto;
+
+}
+/*  */
+/* ul cupons ativos */
+.ul_cupons_ativos{
+    margin-top: 35px;
+
+    & li{
+        display: flex;
+
+        & p{
+            min-width: 100px;
+            flex: 1;
+            border: 1px solid var(--text-secondary);
+            padding: 5px 10px;
+            font-size: 1.2rem;
+            color: var(--text);
+        }
+
+        & p:nth-child(2){
+            flex: .5;
+        }
+        & p:nth-child(3){
+            flex: .4;
+        }
+        & p:nth-child(4){
+            flex: .4;
+        }
+
+        & button{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+
+            & svg{
+                width: 20px;
+                height: 20px;
+                fill: var(--text);
+            }
+        }
+    }
+    & li:first-child{
+        & p{
+            font-weight: bold;
+        }
+    }
+    & li:nth-child(odd){
+        background-color: var(--border-strong);
+    }
+}

@@ -9,6 +9,8 @@ import Cadastrar from './Rotas/Cadastrar/Cadastrar'
 import Lateral from './Global/Lateral/Lateral'
 import Produtos from './Rotas/Produtos/Produtos'
 import Destaques from './Rotas/Destaques/Destaques'
+import Promocoes from './Rotas/Promocoes/Promocoes'
+import Cupons from './Rotas/Cupons/Cupons'
 
 const Rotas = () => {
     const {login} = React.useContext(useStorage)
@@ -34,6 +36,8 @@ const Rotas = () => {
                     <Route path="/cadastrar" element={<Cadastrar />}/>
                     <Route path="/produtos" element={<Produtos />}/>
                     <Route path="/destaques" element={<Destaques />}/>
+                    <Route path="/promocoes" element={<Promocoes />}/>
+                    <Route path="/cupons" element={<Cupons />}/>
                     <Route path="/*" element={<Home />}/>
                 </Routes>
             </main>

@@ -1,0 +1,19 @@
+.select{
+    display: flex;
+    gap: 20px;
+}
+.select2, .input_select{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 5px;
+
+    & label{
+        color: var(--text);
+        font-size: 1.1rem;
+    }
+    & input, select{
+        font-size: 1.1rem;
+        padding: 4px 10px;
+    }
+}

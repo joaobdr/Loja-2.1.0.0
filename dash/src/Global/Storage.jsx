@@ -34,7 +34,7 @@ export const Storage = ({children}) => {
 
         try {
             const post = await fetch(link + '/api/token', options)
-            const resp = await post.json()
+            const resp = await post.json()            
 
             if(resp.status){
                 setLogin(resp.info_user)

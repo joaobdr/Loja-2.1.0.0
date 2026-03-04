@@ -13,8 +13,6 @@ const Login = ({}) => {
     const [error, setError] = React.useState('')
     const [btnActive, setBtnActive] = React.useState(false)
     const {link, setToken, setLogin, tema, setTema} = React.useContext(useStorage)
-
-    console.log(tema);
     
 
     React.useEffect(()=> {document.title = 'Login'} , [])

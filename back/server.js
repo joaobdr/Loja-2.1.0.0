@@ -23,6 +23,9 @@ const login = require('./rotas/dashboard/login');
 const lista_de_produtos = require('./rotas/dashboard/lista_de_produtos');
 const atualizar_produto = require('./rotas/dashboard/atualizarProduto');
 const destacar_produto = require('./rotas/dashboard/destacar_produto');
+const listar_cupons = require('./rotas/dashboard/enviar_cupons_GET.js');
+const criar_cupom = require('./rotas/dashboard/criar_cupom.js')
+const atualizar_cupom = require('./rotas/dashboard/atualizar_cupom.js')
 
 
 // ***************************     ROTAS     ***************************
@@ -35,6 +38,9 @@ app.use('/api', token)
 app.use('/api', lista_de_produtos)
 app.use('/api', atualizar_produto)
 app.use('/api', destacar_produto)
+app.use('/api', listar_cupons)
+app.use('/api', criar_cupom)
+app.use('/api', atualizar_cupom)
 app.get('/', (_, res) => res.status(200).json({msg: 'teste de rota'}))
 
 

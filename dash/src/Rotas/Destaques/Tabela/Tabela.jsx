@@ -8,22 +8,24 @@ const Tabela = ({produtos, setProdutos}) => {
     
 
     return (
-        <table border="1" className={style.tabela}>
-            <thead>
-                <tr>
-                    <th>Codigo</th>
-                    <th>Nome</th>
-                    <th>Preço</th>
-                    <th>Destaque</th>
-                </tr>
-            </thead>
+        <div className={style.div}>
+            <table border="1" className={style.tabela}>
+                <thead>
+                    <tr>
+                        <th>Codigo</th>
+                        <th>Nome</th>
+                        <th>Preço</th>
+                        <th>Destaque</th>
+                    </tr>
+                </thead>
 
 
 
-            <tbody>
-               {produtos.map((x, y) => <Linha key={y} item={x} setProdutos={setProdutos} />)}
-            </tbody>
-        </table>
+                <tbody>
+                {produtos.map((x, y) => <Linha key={y} item={x} setProdutos={setProdutos} />)}
+                </tbody>
+            </table>
+        </div>
     )
 }
 

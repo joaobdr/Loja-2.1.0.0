@@ -1,7 +1,12 @@
+.div{
+    width: 100%;
+}
 .tabela{
+    height: fit-content;
     width: 100%;
     border-collapse: collapse;
     color: var(--text);
+    margin-top: 20px;
 
     & th {
         padding: 5px;
@@ -15,11 +20,6 @@
     & tbody tr:nth-child(odd){
         background: var(--active);
     }
-    & td:nth-child(1){}
-    & td:nth-child(2){}
-    & td:nth-child(3){}
-    & td:nth-child(4){}
-    & td:nth-child(5){}
 
 
     & svg{
