@@ -9,7 +9,7 @@ export const Storage = ({children}) => {
     
     
     // const link = 'http://localhost:3010' //Desenvolvimento
-    const link = 'https://api-01.joaobdr.com/' //Deploy
+    const link = 'https://api-01.joaobdr.com' //Deploy
     const cargos = ['addm', 'admin', 'root']
     const [login, setLogin] = React.useState(null)
     const [token, setToken] = React.useState(null)
