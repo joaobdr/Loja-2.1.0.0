@@ -21,6 +21,7 @@ router.post('/login', async (req, res) =>{
             
         const respUserMongo = await db.collection('usuarios-dashboard').findOne({username})
         if(!respUserMongo) return res.status(404).json({msg: 'Usuário não encontrado!', status: false}) 
+        if(respUserMongo.perfil === 'desabilitado') return res.status(404).json({msg: 'Conta desabilitada, procure um administrador!', status: false}) 
         if(respUserMongo.senha !== senha) return res.status(404).json({msg: 'Senha invalida', status: false})
 
         const token = jwt.sign({ username }, secretKey, { expiresIn: "48h" });
