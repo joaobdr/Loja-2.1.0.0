@@ -19,4 +19,4 @@ jobs:
             cd /home/joaobdr-api-01/htdocs/api-01.joaobdr.com/Loja-2.1.0.0/back
             git pull origin main
             npm install
-            pm2 restart 6
+            pm2 restart 7
