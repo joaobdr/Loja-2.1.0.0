@@ -1,11 +1,10 @@
 import React from 'react'
 import style from './CadastrarUser.module.css'
-
+import { useStorage } from '../../../Global/Storage'
+import Select from './Select/Select'
 
 import Close from '/assets/imgs/close.svg?react'
 import Input from '../../../Global/Input/Input'
-import { useStorage } from '../../../Global/Storage'
-import Select from './Select/Select'
 
 const CadastrarUser = ({puxarUsers, setJanelaCadastro}) => {
     const {token, login, link} = React.useContext(useStorage)
