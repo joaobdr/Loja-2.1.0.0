@@ -33,6 +33,8 @@ const Login = ({}) => {
         }
 
         try {
+            console.log(link + '/api/login');
+            
             const post = await fetch(link + '/api/login', options)
             const resp = await post.json()
             setError(resp.msg);
@@ -46,7 +48,7 @@ const Login = ({}) => {
             
             
         } catch (err) {
-            console.log(error);
+            console.log(err);
             setError('Erro ao enviar formulario!')
         }    
 

@@ -7,13 +7,12 @@ require('dotenv').config();
 // ***************************     CONFIGs     ***************************
 
 const app = express()
-const port = process.env.port || 3000 
+const port = process.env.port || 3010
 
 app.use(express.json({ limit: "10mb" }))
 app.use("/assets", express.static("assets"));
-app.use(cors({
-    origin: process.env.origin || '*'
-}))
+// app.use(cors({origin: process.env.origin || '*'}))
+app.use(cors())
 
 // ***************************     IMPORTS ROTAS     ***************************
 
@@ -25,9 +24,9 @@ const login = require('./rotas/dashboard/login');
 const lista_de_produtos = require('./rotas/dashboard/lista_de_produtos');
 const atualizar_produto = require('./rotas/dashboard/atualizarProduto');
 const destacar_produto = require('./rotas/dashboard/destacar_produto');
-const listar_cupons = require('./rotas/dashboard/enviar_cupons_GET.js');
-const criar_cupom = require('./rotas/dashboard/criar_cupom.js')
-const atualizar_cupom = require('./rotas/dashboard/atualizar_cupom.js')
+const listar_cupons = require('./rotas/dashboard/enviar_cupons_GET');
+const criar_cupom = require('./rotas/dashboard/criar_cupom')
+const atualizar_cupom = require('./rotas/dashboard/atualizar_cupom')
 
 
 // ***************************     ROTAS     ***************************
@@ -43,7 +42,7 @@ app.use('/api', destacar_produto)
 app.use('/api', listar_cupons)
 app.use('/api', criar_cupom)
 app.use('/api', atualizar_cupom)
-app.get('/', (_, res) => res.status(200).json({msg: 'teste de rota'}))
+app.get('/', (_, res) => res.status(200).json({msg: 'teste de rota', status: true}))
 
 
 
