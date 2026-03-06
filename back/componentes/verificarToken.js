@@ -24,7 +24,7 @@ const verificarToken = async (token, username, colecao) =>{
         if (!respMongo) return { msg: "Usuário não encontrado", status: false }
         if (respMongo.perfil == 'desabilitado') return { msg: "Perfil desabilitado", status: false }
         
-        return {msg: 'token valido', status: true, info_user: {username, cargo: respMongo.cargo}}
+        return {msg: 'token valido', status: true, info_user: {username, perfil: respMongo.perfil}}
         
     } catch (err) {
         return {msg: 'token expirado!', status: false}

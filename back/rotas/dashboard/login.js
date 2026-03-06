@@ -30,7 +30,7 @@ router.post('/login', async (req, res) =>{
             status: true,
             info_user: {
                 username: respUserMongo.username,
-                cargo: respUserMongo.cargo
+                perfil: respUserMongo.perfil
             },
             token
         }

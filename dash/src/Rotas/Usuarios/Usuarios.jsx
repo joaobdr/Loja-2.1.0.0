@@ -22,10 +22,12 @@ const Usuarios = () => {
     const puxarUsers = async e =>{
         const options ={headers: {token, username: login.username}}
 
-        const get = await fetch(link + '/api/usuarios/lista', options)
-        const resp = await get.json()
+        try{
+            const get = await fetch(link + '/api/usuarios/lista', options)
+            const resp = await get.json()
         
-        if(resp.status) setUsers(resp.usuarios)
+            if(resp.status) setUsers(resp.usuarios)}
+        catch(err){}
         
     }
 

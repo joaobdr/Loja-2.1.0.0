@@ -9,7 +9,7 @@ const Header = ({}) => {
     return (
         <div className={style.header}>
             <ul className={style.ul_info}> 
-                <li>{login.cargo}</li>
+                <li>{login.perfil}</li>
                 <li>{pagina || "Home"}</li>
                 <li>
                     <p className={style.nome}>{login.username[0].toUpperCase()}</p>
