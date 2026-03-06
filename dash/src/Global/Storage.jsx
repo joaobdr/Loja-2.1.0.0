@@ -8,7 +8,7 @@ export const Storage = ({children}) => {
     const ls = localStorage['mais-acessados'] ? JSON.parse(localStorage['mais-acessados']) : [];
     
     
-    const link = 'https://api-01.joaobdr.com/'
+    const link = 'http://localhost:3010'
     const cargos = ['addm', 'admin', 'root']
     const [login, setLogin] = React.useState(null)
     const [token, setToken] = React.useState(null)
