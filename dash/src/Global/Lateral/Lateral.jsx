@@ -7,13 +7,21 @@ import Sun from '/assets/imgs/sun.svg?react'
 import Moon from '/assets/imgs/moon.svg?react'
 
 const Lateral = ({}) => {
-    const {setTema, tema, maisAcessados, login, cargos} = React.useContext(useStorage)
+    const {setTema, tema, maisAcessados, login, setToken, setLogin} = React.useContext(useStorage)
     const location = useLocation()
     const ordenar = maisAcessados.sort((x, y) => y.acess - x.acess)    
 
+
+    const handleClickSair = e =>{
+        localStorage.removeItem('token')
+        localStorage.removeItem('usuario')
+        setLogin(null)
+        setToken(null)
+    }
+
     return (
         <div className={style.lateral}>
-            <Link to="/">
+            <Link to="/" className={style.logo}>
                 <h2 className={style.titulo}>Loja</h2>
             </Link>
 
@@ -35,7 +43,7 @@ const Lateral = ({}) => {
                     <button className={!tema ? '' : style.active}  onClick={e => setTema(true)}><Moon/></button>
                 </div>
 
-                <span className={style.sair}>Sair</span>
+                <span className={style.sair} onClick={handleClickSair}>Sair</span>
             </div>
         </div>
     )

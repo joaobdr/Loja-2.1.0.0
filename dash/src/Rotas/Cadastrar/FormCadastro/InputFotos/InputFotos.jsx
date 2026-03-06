@@ -2,7 +2,7 @@ import React from 'react'
 import style from './InputFotos.module.css'
 
 import Plus from '/assets/imgs/plus.svg?react'
-import Trash from '/assets/imgs/Trash.svg?react'
+import Trash from '/assets/imgs/trash.svg?react'
 
 
 const InputFotos = ({imagens, setImagens}) => {

@@ -6,6 +6,16 @@
     justify-content: center;
     position: relative;
 }
+.ver {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 1.1rem;
+  color: var(--text);
+  opacity: 0.5;
+  padding: 15px;
+  display: block;
+}
 
 .div_tema{
     width: fit-content;

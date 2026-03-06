@@ -8,6 +8,7 @@ import Dolar from '/assets/imgs/dolar.svg?react'
 import StarFill from '/assets/imgs/star-fill.svg?react'
 import List from '/assets/imgs/lista.svg?react'
 import Register from '/assets/imgs/plus.svg?react'
+import People from '/assets/imgs/people.svg?react'
 import Desconto from '/assets/imgs/desconto.svg?react'
 
 const Home = ({}) => {
@@ -64,6 +65,13 @@ const Home = ({}) => {
                             <Link to="/cupons">
                                 <span>Cupons</span>
                                 <Desconto />
+                            </Link>
+                        </li>
+
+                        <li>
+                            <Link to="/usuarios">
+                                <span>Usuários</span>
+                                <People />
                             </Link>
                         </li>
                     </ul>

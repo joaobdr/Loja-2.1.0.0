@@ -3,8 +3,6 @@ import {Link} from 'react-router-dom'
 import style from './MenuLateral.module.css'
 
 
-import Arrow from '../../../assets/imgs/Arrow.svg?react'
-
 const MenuLateral = () => {
 
   return (

@@ -1,0 +1,23 @@
+.tabela{
+    border-collapse: collapse;
+
+
+    & th, td{
+        padding: 8px 15px;
+        font-size: 1.1rem;
+        color: var(--text);
+
+        & svg{
+            cursor: pointer;
+            fill: var(--text);
+        }
+    }
+    & thead th{
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    & tbody tr:nth-child(2n+1) {
+        background: var(--border-strong);
+    }
+}

@@ -74,6 +74,7 @@ const Login = ({}) => {
                 <button disabled={btnActive} style={btnActive ? {cursor: 'not-allowed', opacity: '.2'} : {}} className={style.btn}>{btnActive ? 'Entrando...' :'Entrar' }</button>
             </form>
         </section>
+        <span className={style.ver}>Ver: 2.1.0.0</span>
     </main>
   )
 }

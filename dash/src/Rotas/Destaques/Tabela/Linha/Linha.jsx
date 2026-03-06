@@ -3,8 +3,8 @@ import style from './Linha.module.css'
 import { useStorage } from '../../../../Global/Storage'
 
 
-import Star from '/assets/Imgs/star.svg?react'
-import StarFill from '/assets/Imgs/star-fill.svg?react'
+import Star from '/assets/imgs/star.svg?react'
+import StarFill from '/assets/imgs/star-fill.svg?react'
 
 
 const Linha = ({item, setProdutos}) => {

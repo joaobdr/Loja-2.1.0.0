@@ -77,7 +77,9 @@ export const Storage = ({children}) => {
     React.useEffect(()=>{verificarToken()},[])
 
   return (
-    <useStorage.Provider value={{login, setLogin, link, token, setToken, setMaisAcessados, setTema, tema, maisAcessados, setPagina, pagina, cargos, formatado}}>
+    <useStorage.Provider value={
+        {login, setLogin, link, token, setToken, setMaisAcessados, setTema, tema, maisAcessados, setPagina, pagina, cargos, formatado}
+        }>
         {loading ? <Load width="100%" height="100vh"/> : children}
     </useStorage.Provider>
   )

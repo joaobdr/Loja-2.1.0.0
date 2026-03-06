@@ -2,9 +2,6 @@ import React from 'react'
 import style from './Produtos.module.css'
 import { useStorage } from '../../Global/Storage'
 import Pesquisa from './Pesquisa/Pesquisa'
-
-
-import Edit from '/assets/imgs/Edit.svg?react'
 import Produto from './Produto/Produto'
 import EditarProduto from './EditarProduto/EditarProduto'
 

@@ -11,6 +11,7 @@ import Produtos from './Rotas/Produtos/Produtos'
 import Destaques from './Rotas/Destaques/Destaques'
 import Promocoes from './Rotas/Promocoes/Promocoes'
 import Cupons from './Rotas/Cupons/Cupons'
+import Usuarios from './Rotas/Usuarios/Usuarios'
 
 const Rotas = () => {
     const {login} = React.useContext(useStorage)
@@ -38,6 +39,7 @@ const Rotas = () => {
                     <Route path="/destaques" element={<Destaques />}/>
                     <Route path="/promocoes" element={<Promocoes />}/>
                     <Route path="/cupons" element={<Cupons />}/>
+                    <Route path="/usuarios" element={<Usuarios />}/>
                     <Route path="/*" element={<Home />}/>
                 </Routes>
             </main>

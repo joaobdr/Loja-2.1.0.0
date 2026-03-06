@@ -2,8 +2,6 @@ import React from 'react'
 import style from './Header.module.css'
 import { useStorage } from '../Storage'
 
-import Arrow from '../../../assets/imgs/Arrow.svg?react'
-
 const Header = ({}) => {
     const {login, pagina} = React.useContext(useStorage)
     

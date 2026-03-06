@@ -3,7 +3,7 @@ import style from './Produto.module.css'
 import { useStorage } from '../../../Global/Storage'
 
 
-import Edit from '/assets/imgs/Edit.svg?react'
+import Edit from '/assets/imgs/edit.svg?react'
 
 
 const Produto = ({produto, filtros, search,setJanela}) => {
