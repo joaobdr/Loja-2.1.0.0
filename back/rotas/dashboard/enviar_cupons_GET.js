@@ -24,7 +24,7 @@ router.get('/cupons/lista', async (req, res) =>{
 
         const cargosPermitidos = new Set(['adm', 'admin', 'root'])
 
-        if (!cargosPermitidos.has(verifToken.info_user.cargo)) {
+        if (!cargosPermitidos.has(verifToken.info_user.perfil)) {
             return res.status(403).json({ msg: 'Usuário sem permissão', status: false })
         }
         

@@ -68,7 +68,7 @@ async (req, res) =>{
         }
         const cargos = ['root', 'admin', 'adm']
         
-        if(!cargos.includes(verifToken.info_user.cargo)){
+        if(!cargos.includes(verifToken.info_user.perfil)){
             await removerArquvios(imagens, fundo)
             return res.status(400).json({msg: 'Usuário sem permissão para cadastrar produto!', status: false})
         }

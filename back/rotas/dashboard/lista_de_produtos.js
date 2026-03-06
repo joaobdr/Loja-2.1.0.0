@@ -24,14 +24,10 @@ router.get('/produtos/lista', async (req, res) =>{
 
         const ts = e =>{ 
             const cargos = ['admin', 'root'] //Cargos com permissao para ver o custo
-            console.log('-------------------------------------------------');            
-            console.log(cargos.includes(respToken.info_user.cargo));
-            console.log(respToken.info_user.cargo);
-            console.log(e);
-            console.log('-------------------------------------------------');
+            
 
             
-            if(cargos.includes(respToken.info_user.cargo)) return e.custo
+            if(cargos.includes(respToken.info_user.perfil)) return e.custo
             else return undefined
         }
     

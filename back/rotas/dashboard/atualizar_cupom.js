@@ -20,7 +20,7 @@ router.post('/cupom/atualizar', async (req, res) =>{
         const verifToken = await verificarToken(token, username)
         if(!verifToken.status) return res.status(404).json(verifToken)
 
-        if (!cargosPermitidos.has(verifToken.info_user.cargo)) return res.status(403).json({ msg: 'Usuário sem permissão', status: false })
+        if (!cargosPermitidos.has(verifToken.info_user.perfil)) return res.status(403).json({ msg: 'Usuário sem permissão', status: false })
         if(!cupom || !descricao || !desconto || !tipo) return res.status(400).json({msg: 'Não há informações suficientes para criar cupom', status: false})
         if (isNaN(Number(desconto))) return res.status(400).json({msg: 'Desconto inválido',status: false})
 
