@@ -11,7 +11,9 @@ const port = process.env.port || 3000
 
 app.use(express.json({ limit: "10mb" }))
 app.use("/assets", express.static("assets"));
-app.use(cors())
+app.use(cors({
+    origin: process.env.origin || '*'
+}))
 
 // ***************************     IMPORTS ROTAS     ***************************
 
