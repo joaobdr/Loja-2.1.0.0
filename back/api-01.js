@@ -45,6 +45,7 @@ app.use('/api', criar_cupom)
 app.use('/api', atualizar_cupom)
 app.use('/api', lista_de_usuarios)
 app.get('/', (_, res) => res.status(200).json({msg: 'teste de rota', status: true, ts: true}))
+app.get('/*', (_, res) => res.status(200).json({msg: 'teste de rota', status: true, ts: true}))
 
 
 
