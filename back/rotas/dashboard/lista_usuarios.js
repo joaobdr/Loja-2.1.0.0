@@ -16,9 +16,9 @@ const cargosPermitidos = new Set(['adm', 'admin', 'root'])
 
 router.get('/usuarios/lista', async (req, res) =>{
     try {
-        const {token, username} = req.headers      
-        const respToken = await verificarToken(token, username)
+        const {token, username} = req.headers  
         
+        const respToken = await verificarToken(token, username)        
         if(!respToken.status) return res.status(404).json(respToken)
 
         
