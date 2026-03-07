@@ -3,7 +3,11 @@ import style from './Pesquisa.module.css'
 import FiltroEstoque from './FiltroEstoque/FiltroEstoque';
 import FiltroCategoria from './FiltroCategoria/FiltroCategoria';
 
+
+import Arrow from '/assets/imgs/arrow.svg?react'
+
 const Pesquisa = ({search, setSearch, filtros, setFiltros, produtos}) => {
+    const [active, setActive] = React.useState(false)
     const produtosComEstoque = produtos.filter(item => item.estoque > 0)
     const somaProdutosCusto = produtosComEstoque.reduce((total, item) =>  total + (item.estoque * item.custo),0)
     const somaProdutosBruto = produtosComEstoque.reduce((total, item) =>  total + (item.estoque * item.preco),0)
@@ -14,6 +18,11 @@ const Pesquisa = ({search, setSearch, filtros, setFiltros, produtos}) => {
                     style: 'currency',
                     currency: 'BRL'
                 });
+    }
+
+    const handleActive = e =>{
+
+
     }
 
     return (
@@ -39,9 +48,12 @@ const Pesquisa = ({search, setSearch, filtros, setFiltros, produtos}) => {
             
             
             <div className={style.filtros}>
-                <h4 className={style.titulo}>Filtros</h4>
+                <h4 className={style.titulo}>
+                    Filtros
+                    <Arrow style={active ? {rotate: '180deg'} : {rotate: '0deg'}} className={style.expan} onClick={() => setActive(prev => !prev)}/>
+                </h4>
 
-                <section className={style.section}>
+                <section className={style.section} style={active ? {display: 'flex'} : {display: 'none'}}>
                     <FiltroEstoque filtros={filtros} setFiltros={setFiltros}/>
                     <FiltroCategoria produtos={produtos} setFiltros={setFiltros} filtros={filtros}/>
                 </section>

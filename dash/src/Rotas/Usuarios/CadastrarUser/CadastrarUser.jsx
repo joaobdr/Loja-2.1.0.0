@@ -1,7 +1,7 @@
 import React from 'react'
 import style from './CadastrarUser.module.css'
 import { useStorage } from '../../../Global/Storage'
-import Select from './Select/Select'
+import Select from '../Select/Select'
 
 import Close from '/assets/imgs/close.svg?react'
 import Input from '../../../Global/Input/Input'
@@ -18,13 +18,7 @@ const CadastrarUser = ({puxarUsers, setJanelaCadastro}) => {
 
     const handleSubmit = async e =>{
         e.preventDefault()
-        setLoading(true)
-
-        console.log(repetirSenha !== senha);
-        console.log(repetirSenha);
-        console.log(senha);
-        console.log('---------------------------------------------------------');
-        
+        setLoading(true)        
         
 
         if(repetirSenha !== senha){

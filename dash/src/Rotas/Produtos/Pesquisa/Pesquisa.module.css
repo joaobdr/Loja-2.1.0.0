@@ -8,8 +8,6 @@
     align-items: center;
     gap: 20px;
 }
-
-
 /**************************                INPUT PESQUISA                **************************/
 .pesquisa{
     width: 100%;
@@ -57,7 +55,18 @@
 .filtros{
     width: 100%;
 }
+.expan{
+    position: absolute;
+    cursor: pointer;
+    bottom: 0;
+    right: 0px;
+    width: 35px;
+    height: 35px;
+    transition: 200ms;
+}
+
 h4.titulo{
+    position: relative;
     font-size: 1.3rem;
     color: var(--text);
     text-align: center;
@@ -73,9 +82,9 @@ h4.titulo::before{
     border-radius: 10px;
 }
 .section{
-    display: flex;
     gap: 20px;
     justify-content: center;
     margin-top: 20px;
+    transition: 1s;
 }
 

@@ -46,9 +46,9 @@ const Produto = ({produto, filtros, search,setJanela}) => {
                 <td>{produto.nome}</td>
                 <td>{produto.categoria}</td>
                 <td>{produto.estoque}</td>
-                {cargos.includes(login.cargo) ? <td>{formatarPreco(produto.custo)}</td> : null}
+                {cargos.includes(login.perfil) ? <td>{formatarPreco(produto.custo)}</td> : null}
                 <td>{produto.preco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</td>
-                {cargos.includes(login.cargo) ? <td><Edit onClick={e => setJanela(produto)}/></td> : null}
+                {cargos.includes(login.perfil) ? <td><Edit onClick={e => setJanela(produto)}/></td> : null}
             </tr>
         </>
     )

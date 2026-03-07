@@ -1,0 +1,94 @@
+.box{
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-2);
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content{
+    min-width: 400px;
+    min-height: 200px;
+    background-color: var(--border-strong);
+    border-radius: 5px;
+    position: relative;
+    padding: 20px;
+}
+
+.btn_close{
+    position: absolute;
+    right: 0;
+    top: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    margin: 10px;
+
+    & svg{
+        width: 30px;
+        height: 30px;
+        fill: var(--text);
+    }
+}
+
+
+/* form user */
+h2.titulo{
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+}
+h2.titulo::after{
+    width: 120px;
+    height: 3px;
+    background-color: var(--text-disabled);
+    content: '';
+    display: block;
+    margin: 8px auto;
+    border-radius: 10px;
+}
+h4.titulo{
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.select{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    & label{
+        font-size: 1.1rem;
+        color: var(--text);
+    }
+
+    & select{
+        padding: 4px 10px;
+    }
+}
+
+.inputs{
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+
+.mensagem_erro{
+    color: #f00;
+    text-align: center;
+    margin-top: 30px;
+    display: block;
+}
+
+.button_salvar{
+    width: 100%;
+    padding: 15px 0;
+    cursor: pointer;
+    margin-top: 30px;
+}
+

@@ -1,15 +1,16 @@
 import React from 'react'
 import style from './Tabela.module.css'
 import Linha from './Linha/Linha'
+import EditarUsuario from './EditarUsuario/EditarUsuario'
 
 const Tabela = ({users, pesquisa}) => {
-
+    const [janela, setJanela] = React.useState(false)
 
 
 
     return (
         <section className={style.section}>
-            
+            {janela && <EditarUsuario user={janela} setJanela={setJanela}/>}
             
             <table border='1' className={style.tabela}>
                 <thead>
@@ -22,7 +23,7 @@ const Tabela = ({users, pesquisa}) => {
                 </thead>
 
                 <tbody>
-                    {users.map((x, y) => <Linha key={y} user={x} pesquisa={pesquisa}/>)}
+                    {users.map((x, y) => <Linha key={y} setJanela={setJanela} user={x} pesquisa={pesquisa}/>)}
                 </tbody>
             </table>
         </section>

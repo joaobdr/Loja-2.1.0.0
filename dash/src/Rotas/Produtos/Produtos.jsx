@@ -46,9 +46,9 @@ const Produtos = ({}) => {
                             <th>Nome</th>
                             <th>Categoria</th>
                             <th>Estoque</th>
-                            { cargos.includes(login.cargo) ? <th>Custo</th> : null}
+                            { cargos.includes(login.perfil) ? <th>Custo</th> : null}
                             <th>Preço</th>
-                            { cargos.includes(login.cargo) ? <th>Ações</th> : null}
+                            { cargos.includes(login.perfil) ? <th>Ações</th> : null}
                         </tr>
                     </thead>
 

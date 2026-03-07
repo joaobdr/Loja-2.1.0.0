@@ -1,24 +1,22 @@
-[
-    {
-        "cupom": "BEMVINDO10",
-        "descricao": "Cupom de boas-vindas para novos usuários",
-        "ativo": true,
-        "desconto": {
-            "tipo": "porcentagem",
-            "valor": 10,
-            "restricoes":{
-                "apenasPrimeiraCompra": true,
-                "categoriasPermitidas": [],
-                "produtosPermitidos": [],
-                "valorMaximoDesconto": 100
-            }
-        },
-        "limiteGeral": 500,
-        "usados": 99,
-        "dataInicio": "2026-02-01T00:00:00Z",
-        "dataFim": "Mon Feb 23 2026 19:27:30 GMT-0300 (Horário Padrão de Brasília)",
-        "acumulavelComOutroCupom": false,
-        "criadoEm": "2026-02-01T10:00:00Z",
-        "atualizadoEm": "2026-02-10T15:30:00Z"
-    }
-]
+{
+    "cupom": "BEMVINDO10",
+    "descricao": "Cupom de boas-vindas para novos usuários",
+    "ativo": true,
+    "desconto": {
+        "tipo": "porcentagem",
+        "valor": 10,
+        "restricoes":{
+            "apenasPrimeiraCompra": true,
+            "categoriasPermitidas": [],
+            "produtosPermitidos": [],
+            "valorMaximoDesconto": 100
+        }
+    },
+    "limiteGeral": 500,
+    "usados": 99,
+    "dataInicio": "2026-02-01T00:00:00Z",
+    "dataFim": "Mon Feb 23 2026 19:27:30 GMT-0300 (Horário Padrão de Brasília)",
+    "acumulavelComOutroCupom": false,
+    "criadoEm": "2026-02-01T10:00:00Z",
+    "atualizadoEm": "2026-02-10T15:30:00Z"
+}

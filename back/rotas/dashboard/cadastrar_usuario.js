@@ -59,10 +59,7 @@ router.post('/usuarios/cadastrar', async (req, res) =>{
 
         const verificarHierarquia =  hierarquia.find(x => x.cargo === cargo)
         const verificarHierarquiaCadastro =  hierarquia.find(x => x.cargo === perfil)
-
-        console.log(verificarHierarquia);
-        console.log(verificarHierarquiaCadastro);
-        
+                
         
         if (!verificarHierarquia || !verificarHierarquiaCadastro) return res.status(400).json({ msg: 'Perfil inválido', status: false })
         
