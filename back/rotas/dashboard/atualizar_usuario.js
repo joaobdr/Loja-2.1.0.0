@@ -64,6 +64,7 @@ router.post('/usuario/atualizar', async (req, res) =>{
             ...atualizacao,
             perfil
         }
+        
         const att_user_mongo = await db.collection('usuarios-dashboard').updateOne({username}, {$set: atualizacao})
         
         
