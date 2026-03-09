@@ -46,10 +46,6 @@ const EditarUsuario = ({user, setJanela, puxarUsers}) => {
     const [loading, setLoading] = React.useState(false)
     const [alterarSenha, setAlterarSenha] = React.useState(false)
 
-    React.useEffect(() =>{
-        console.log(user);        
-    },[])
-
     const handleSubmit = async e =>{
         e.preventDefault()
         setLoading(true)
@@ -59,6 +55,9 @@ const EditarUsuario = ({user, setJanela, puxarUsers}) => {
             headers: {'Content-type': 'application/json', token, username_adm: login.username},
             body: JSON.stringify({perfil, senha, repetirSenha, nome, username: user.username})
         }
+
+        console.log('options ==', options);
+        
         
         try {
             const POST = await fetch(link + '/api/usuario/atualizar', options)

@@ -25,7 +25,6 @@ const Usuarios = () => {
         try{
             const get = await fetch(link + '/api/usuarios/lista', options)
             const resp = await get.json()
-            console.log(resp);
             
             if(resp.status) setUsers(resp.usuarios)}
         catch(err){

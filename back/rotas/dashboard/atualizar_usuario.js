@@ -37,7 +37,7 @@ const hierarquia = [
 router.post('/usuario/atualizar', async (req, res) =>{
     try {
         const {token, username_adm} = req.headers         
-        const {perfil, senha, repetirSenha, nome, username} = req.body         
+        const {perfil, senha, repetirSenha, nome, username} = req.body     
 
         const verifToken = await verificarToken(token, username_adm)
         if(!verifToken.status) return res.status(404).json(verifToken)
@@ -66,7 +66,6 @@ router.post('/usuario/atualizar', async (req, res) =>{
         }
         const att_user_mongo = await db.collection('usuarios-dashboard').updateOne({username}, {$set: atualizacao})
         
-        console.log(atualizacao);
         
         return res.status(200).json({msg: 'Usuário atualizado com sucesso!', status: true})
         
