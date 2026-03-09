@@ -12,7 +12,7 @@ const secretKey = process.env.secretKey
 
 // ***************************     ROTA     ***************************
 
-const cargosPermitidos = new Set(['adm', 'administrador', 'root', 'fundador'])
+const cargosPermitidos = new Set([ 'administrador', 'root', 'fundador'])
 const hierarquia = [
     {
         cargo: 'desabilitado',
@@ -52,7 +52,7 @@ router.post('/usuarios/cadastrar', async (req, res) =>{
         //Cargo do usuario que vai cadastrar
         const cargo = respToken.info_user.perfil
             
-        if(!cargosPermitidos.has(cargo)) return res.status(401).json({msg: 'Você não tem permissap para cadastrar usuários', status: false})
+        if(!cargosPermitidos.has(cargo)) return res.status(401).json({msg: 'Você não tem permissão para cadastrar usuários', status: false})
         
         const verificarSeUsuarioExiste = await db.collection('usuarios-dashboard').findOne({username})
         if(verificarSeUsuarioExiste) return res.status(400).json({msg: 'Usuário já cadastrado', status: false})

@@ -66,7 +66,7 @@ async (req, res) =>{
             removerArquvios(imagens, fundo)
             return res.status(401).json({verifToken})
         }
-        const cargos = ['root', 'admin', 'adm']
+        const cargos = [ 'administrador', 'fundador', 'root']
         
         if(!cargos.includes(verifToken.info_user.perfil)){
             await removerArquvios(imagens, fundo)

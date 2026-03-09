@@ -12,7 +12,7 @@ const secretKey = process.env.secretKey
 
 // ***************************     ROTA     ***************************
 
-const cargosPermitidos = new Set(['adm', 'admin', 'root'])
+const cargosPermitidos = new Set([ 'administrador', 'fundador', 'root'])
 
 router.get('/usuarios/lista', async (req, res) =>{
     try {

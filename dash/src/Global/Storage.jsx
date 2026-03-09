@@ -1,15 +1,14 @@
 import React from 'react'
 import Load from './Load/Load'
+import.meta.env
 
 export const useStorage = React.createContext()
 
 export const Storage = ({children}) => {
-    const tm = localStorage.tema ? JSON.parse(localStorage.tema).tema : false;
+    const tm = localStorage.getItem('tema') ? JSON.parse(localStorage.getItem('tema')).tema : true;
     const ls = localStorage['mais-acessados'] ? JSON.parse(localStorage['mais-acessados']) : [];
     
-    
-    // const link = 'http://localhost:3010' //Desenvolvimento
-    const link = 'https://api-01.joaobdr.com' //Deploy
+    const link = import.meta.env.VITE_API
     const cargos = ['addm', 'admin', 'root']
     const [login, setLogin] = React.useState(null)
     const [token, setToken] = React.useState(null)
@@ -20,6 +19,7 @@ export const Storage = ({children}) => {
     
     
     const formatado = valor =>{return valor.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}
+
     const verificarToken = async e =>{
         setLoading(true)
         const username = window.localStorage.usuario ? JSON.parse(window.localStorage.usuario).username : null
@@ -35,12 +35,12 @@ export const Storage = ({children}) => {
 
         try {
             const post = await fetch(link + '/api/token', options)
+            if(!post.ok) throw new Error('Erro na requisição')
             const resp = await post.json()            
 
             if(resp.status){
                 setLogin(resp.info_user)
                 setToken(verifToken)
-                setLogin(resp.info_user)
             }else{
                 window.localStorage.removeItem('token')
                 window.localStorage.removeItem('usuario')
@@ -48,25 +48,31 @@ export const Storage = ({children}) => {
         } finally{
             setLoading(false)
         }
-
-
     }
+
     React.useEffect(()=>{
         const ts = () =>{
             if(!pagina) return 
-            const filtro = maisAcessados.filter(x => x.link === pagina)  
+            setMaisAcessados(prev => {
+                const existe = prev.find(x => x.link === pagina)
 
-            if(!filtro[0]) {
-                setMaisAcessados(prev => [...prev, {link: pagina, acess: 1}])
-            }else{
-                const obj = maisAcessados.map(x => x.link === pagina ? ({...x, acess: Number(x.acess) + 1}) : ({...x}))
-                setMaisAcessados(obj);
-            }
+                if(!existe){
+                    return [...prev, {link: pagina, acess: 1}]
+                }
+
+                return prev.map(x =>
+                    x.link === pagina
+                        ? {...x, acess: Number(x.acess) + 1}
+                        : x
+                )
+            })
         }
         ts()
     },[pagina])
 
     React.useEffect(()=>{
+        console.log('tema ===='. tema);
+        
         document.documentElement.setAttribute('data-tema', tema ? 'escuro' : 'claro');
         localStorage.setItem("tema", JSON.stringify({tema}));
     }, [tema])

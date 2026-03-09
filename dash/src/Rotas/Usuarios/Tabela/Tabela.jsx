@@ -3,14 +3,14 @@ import style from './Tabela.module.css'
 import Linha from './Linha/Linha'
 import EditarUsuario from './EditarUsuario/EditarUsuario'
 
-const Tabela = ({users, pesquisa}) => {
+const Tabela = ({users, pesquisa, puxarUsers}) => {
     const [janela, setJanela] = React.useState(false)
 
 
 
     return (
         <section className={style.section}>
-            {janela && <EditarUsuario user={janela} setJanela={setJanela}/>}
+            {janela && <EditarUsuario user={janela} setJanela={setJanela} puxarUsers={puxarUsers}/>}
             
             <table border='1' className={style.tabela}>
                 <thead>

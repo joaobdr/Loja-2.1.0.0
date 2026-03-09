@@ -29,6 +29,7 @@ const criar_cupom = require('./rotas/dashboard/criar_cupom')
 const atualizar_cupom = require('./rotas/dashboard/atualizar_cupom')
 const lista_de_usuarios = require('./rotas/dashboard/lista_usuarios')
 const cadastrar_usuarios = require('./rotas/dashboard/cadastrar_usuario')
+const atualizar_usuario = require('./rotas/dashboard/atualizar_usuario')
 
 
 // ***************************     ROTAS     ***************************
@@ -46,6 +47,7 @@ app.use('/api', criar_cupom)
 app.use('/api', atualizar_cupom)
 app.use('/api', lista_de_usuarios)
 app.use('/api', cadastrar_usuarios)
+app.use('/api', atualizar_usuario)
 
 app.get('/', (_, res) => res.status(200).json({msg: 'teste de rota', status: true, ts: true}))
 

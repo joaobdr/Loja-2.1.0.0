@@ -77,6 +77,41 @@ h4.titulo{
     gap: 20px;
     flex-direction: column;
 }
+h3.titulo{
+    text-align: center;
+    font-size: 1.1rem;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    
+    & svg{
+        transition: 1s;
+        cursor: pointer;
+    }
+}
+.senha{
+    border: 1px solid var(--text-disabled);
+    padding: 10px;
+}
+
+.div_senha{
+    height: 0px;
+    transition: 250ms;
+    flex-direction: column;
+    gap: 20px;
+
+    & div{
+        display: none;
+    }
+}
+.div_senha.active{
+    display: flex;
+    height: 142px;
+
+    & div{
+        display: flex;
+    }
+}
 
 .mensagem_erro{
     color: #f00;

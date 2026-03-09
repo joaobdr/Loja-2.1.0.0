@@ -9,7 +9,7 @@ connectToDatabase().then(() => db = getDB())
 const secretKey = process.env.secretKey
 
 
-const cargosPermitidos = new Set(['adm', 'admin', 'root'])
+const cargosPermitidos = new Set([ 'administrador', 'fundador', 'root'])
 
 // ***************************     ROTA     ***************************
 router.post('/cupom/atualizar', async (req, res) =>{

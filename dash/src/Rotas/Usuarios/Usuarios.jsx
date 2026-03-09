@@ -56,7 +56,7 @@ const Usuarios = () => {
                     </button>)}
             </div>
 
-            <Tabela users={users} pesquisa={pesquisa}/>
+            <Tabela users={users} pesquisa={pesquisa} puxarUsers={puxarUsers}/>
         </div>
     )
 }

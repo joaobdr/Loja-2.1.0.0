@@ -5,6 +5,8 @@ import Select from '../../Select/Select'
 import Input from '../../../../Global/Input/Input'
 import { useStorage } from '../../../../Global/Storage'
 
+import Arrow from '/assets/imgs/arrow.svg?react'
+
 const hierarquia = [
     {
         cargo: 'desabilitado',
@@ -28,8 +30,8 @@ const hierarquia = [
     }
 ]
 
-const EditarUsuario = ({user, setJanela}) => {
-    const {login, token} = React.useContext(useStorage)        
+const EditarUsuario = ({user, setJanela, puxarUsers}) => {
+    const {login, token, link} = React.useContext(useStorage)        
     
     const verificarHierarquia =  hierarquia.find(x => x.cargo === login.perfil)
     const verificarHierarquiaCadastro =  hierarquia.find(x => x.cargo === user.perfil)        
@@ -42,6 +44,7 @@ const EditarUsuario = ({user, setJanela}) => {
 
     const [mensagem, setMensagem] = React.useState(null)
     const [loading, setLoading] = React.useState(false)
+    const [alterarSenha, setAlterarSenha] = React.useState(false)
 
     React.useEffect(() =>{
         console.log(user);        
@@ -53,16 +56,19 @@ const EditarUsuario = ({user, setJanela}) => {
 
         const options = {
             method: 'POST',
-            headets: {'Content-type': 'application/json', token, username: login.username},
+            headers: {'Content-type': 'application/json', token, username_adm: login.username},
             body: JSON.stringify({perfil, senha, repetirSenha, nome, username: user.username})
         }
-
+        
         try {
             const POST = await fetch(link + '/api/usuario/atualizar', options)
             const resp = await POST.json()
 
-            console.log(resp);
-            
+            if(resp.status) {
+                puxarUsers()
+                setJanela(false)
+            }
+            setMensagem(resp.msg)
 
         } catch (error) {console.log(error); setMensagem('Erro ao enviar formulario!')} finally{setLoading(false)}
     }
@@ -79,8 +85,16 @@ const EditarUsuario = ({user, setJanela}) => {
                     
                     <div className={style.inputs}>
                         <Input valor={nome} setValor={setNome} nome='Nome completo' tipo='text'/>
-                        <Input valor={senha} setValor={setSenha} nome='senha' tipo='password'/>
-                        <Input valor={repetirSenha} setValor={setRepetirSenha} nome='Repetir senha' tipo='password'/>
+
+
+                        <div className={style.senha}>
+                            <h3 className={style.titulo} onClick={() => setAlterarSenha(prev => !prev)}>Alterar senha <Arrow style={alterarSenha ? {rotate: '180deg'} : {rotate: '0deg'}}/></h3>
+                            <div className={`${style.div_senha} ${alterarSenha ? style.active : ''}`} >
+                                <Input valor={senha} setValor={setSenha} nome='senha' tipo='password'/>
+                                <Input valor={repetirSenha} setValor={setRepetirSenha} nome='Repetir senha' tipo='password'/>
+                            </div>
+                        </div>
+
 
                         <div className={style.select}>
                             <label htmlFor="select-perfil">Perfil</label>

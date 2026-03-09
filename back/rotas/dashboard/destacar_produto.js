@@ -9,6 +9,7 @@ let db
 connectToDatabase().then(() => db = getDB())
 const secretKey = process.env.secretKey
 
+const cargosPermitidos = new Set([ 'administrador', 'fundador', 'root'])
 
 // ***************************     ROTA     ***************************
 
