@@ -54,10 +54,7 @@ const EditarUsuario = ({user, setJanela, puxarUsers}) => {
             method: 'POST',
             headers: {'Content-type': 'application/json', token, username_adm: login.username},
             body: JSON.stringify({perfil, senha, repetirSenha, nome, username: user.username})
-        }
-
-        console.log('options ==', options);
-        
+        }        
         
         try {
             const POST = await fetch(link + '/api/usuario/atualizar', options)
@@ -67,6 +64,8 @@ const EditarUsuario = ({user, setJanela, puxarUsers}) => {
                 puxarUsers()
                 setJanela(false)
             }
+            console.log('resp ===', resp);
+            
             setMensagem(resp.msg)
 
         } catch (error) {console.log(error); setMensagem('Erro ao enviar formulario!')} finally{setLoading(false)}
