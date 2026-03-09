@@ -50,7 +50,7 @@ const EditarUsuario = ({user, setJanela, puxarUsers}) => {
 
         const options = {
             method: 'POST',
-            headers: {'Content-type': 'application/json', token, username_adm: login.username},
+            headers: {'Content-type': 'application/json', token, usernameadm: login.username},
             body: JSON.stringify({perfil, senha, repetirSenha, nome, username: user.username})
         }        
 

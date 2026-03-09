@@ -36,10 +36,10 @@ const hierarquia = [
 // ***************************     ROTA     ***************************
 router.post('/usuario/atualizar', async (req, res) =>{
     try {
-        const {token, username_adm} = req.headers         
+        const {token, usernameadm} = req.headers         
         const {perfil, senha, repetirSenha, nome, username} = req.body     
 
-        const verifToken = await verificarToken(token, username_adm)
+        const verifToken = await verificarToken(token, usernameadm)
         if(!verifToken.status) return res.status(404).json(verifToken)
         if (!cargosPermitidos.has(verifToken.info_user.perfil)) return res.status(403).json({ msg: 'Usuário sem permissão', status: false })
         
