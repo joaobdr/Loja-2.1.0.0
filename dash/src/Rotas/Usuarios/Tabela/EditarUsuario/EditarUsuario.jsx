@@ -55,6 +55,9 @@ const EditarUsuario = ({user, setJanela, puxarUsers}) => {
             headers: {'Content-type': 'application/json', token, username_adm: login.username},
             body: JSON.stringify({perfil, senha, repetirSenha, nome, username: user.username})
         }        
+
+        console.log('opt ===', options);
+        
         
         try {
             const POST = await fetch(link + '/api/usuario/atualizar', options)
