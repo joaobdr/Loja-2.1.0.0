@@ -70,9 +70,7 @@ export const Storage = ({children}) => {
         ts()
     },[pagina])
 
-    React.useEffect(()=>{
-        console.log('tema ===='. tema);
-        
+    React.useEffect(()=>{        
         document.documentElement.setAttribute('data-tema', tema ? 'escuro' : 'claro');
         localStorage.setItem("tema", JSON.stringify({tema}));
     }, [tema])

@@ -12,7 +12,7 @@ connectToDatabase().then(() => {  db = getDB();});
 
 
 const verificarToken = async (token, username, colecao) =>{
-    if (!token || !username) return {msg: "Usuário ou token faltando", status: false}
+    if (!token || !username) return {msg: "Usuário ou token faltando", status: false, token, username, teste: '123'}
     
     try {
         const decoded = jwt.verify(token, secretKey); 
