@@ -67,7 +67,6 @@ router.post('/usuario/atualizar', async (req, res) =>{
 
         const att_user_mongo = await db.collection('usuarios-dashboard').updateOne({username}, {$set: atualizacao})
         
-        
         return res.status(200).json({msg: 'Usuário atualizado com sucesso!', status: true})
         
     } catch (err) {
