@@ -33,9 +33,7 @@ const hierarquia = [
 const EditarUsuario = ({user, setJanela, puxarUsers}) => {
     const {login, token, link} = React.useContext(useStorage)        
     
-    const verificarHierarquia =  hierarquia.find(x => x.cargo === login.perfil)
-    const verificarHierarquiaCadastro =  hierarquia.find(x => x.cargo === user.perfil)        
-    
+    const verificarHierarquia =  hierarquia.find(x => x.cargo === login.perfil)  
 
     const [perfil, setPerfil] = React.useState(user.perfil)
     const [nome, setNome] = React.useState(user.nome)
